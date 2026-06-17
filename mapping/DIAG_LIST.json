@@ -1,0 +1,64 @@
+[
+    {
+        "diagnosis_id": "SINUS_RHYTHM",
+        "diagnosis_name": "Sinus Rhythm"
+    },
+    {
+        "diagnosis_id": "SINUS_BRADYCARDIA",
+        "diagnosis_name": "Sinus bradycardia"
+    },
+    {
+        "diagnosis_id": "SINUS_TACHYCARDIA",
+        "diagnosis_name": "Sinus Tachycardia"
+    },
+    {
+        "diagnosis_id": "ATRIAL_FIBRILLATION",
+        "diagnosis_name": "Atrial Fibrillation"
+    },
+    {
+        "diagnosis_id": "FIRST_DEGREE_AV_BLOCK_WITH_NORMAL_QRS",
+        "diagnosis_name": "First-degree atrioventricular block"
+    },
+    {
+        "diagnosis_id": "FIRST_DEGREE_AV_BLOCK_WITH_WIDE_QRS",
+        "diagnosis_name": "FIRST_DEGREE_AV_BLOCK_WITH_WIDE_QRS"
+    },
+    {
+        "diagnosis_id": "LEFT_BUNDLE_BRANCH_BLOCK_COMPLETE",
+        "diagnosis_name": "Complete Left Bundle Branch Block"
+    },
+    {
+        "diagnosis_id": "LEFT_BUNDLE_BRANCH_BLOCK_INCOMPLETE",
+        "diagnosis_name": "Incomplete Left Bundle Branch Block"
+    },
+    {
+        "diagnosis_id": "LEFT_VENTRICULAR_HYPERTROPHY",
+        "diagnosis_name": "Left Ventricular Hypertrophy"
+    },
+    {
+        "diagnosis_id": "MYOCARDIAL_INFARCTION",
+        "diagnosis_name": "Myocardial Infarction"
+    },
+    {
+        "diagnosis_id": "Q_WAVE_MYOCARDIAL_INFARCTION",
+        "diagnosis_name": "Q-wave myocardial infarction"
+    },
+    {
+        "diagnosis_id": "MYOCARDIAL_ISCHEMIA",
+        "diagnosis_name": "Myocardial Ischemia"
+    },
+
+    {
+        "diagnosis_id": "RIGHT_BUNDLE_BRANCH_BLOCK",
+        "diagnosis_name": "Right Bundle Branch Block"
+    },
+    {
+        "diagnosis_id": "RIGHT_VENTRICULAR_HYPERTROPHY",
+        "diagnosis_name": "Right Ventricular Hypertrophy"
+    },
+    {
+        "diagnosis_id": "VENTRICULAR_RHYTHM",
+        "diagnosis_name": "Ventricular Rhythm"
+    }
+
+]

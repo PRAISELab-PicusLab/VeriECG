@@ -1,0 +1,9 @@
+transformers==4.37.2
+accelerate==0.21.0
+ftfy
+wfdb
+peft==0.10.0
+shortuuid
+bitsandbytes
+pillow
+gdown

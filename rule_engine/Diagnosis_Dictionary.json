@@ -1,0 +1,275 @@
+[
+    {
+        "diagnosis_id": "SINUS_RHYTHM",
+        "diagnosis_name": "Sinus Rhythm",
+        "required_observations": [
+            "OBS_HEART_RATE_NORMAL_RANGE",
+            "OBS_P_PRECEDES_QRS",
+            "OBS_P_POSITIVE_LEAD_II",
+            "OBS_P_DURATION_NORMAL",
+            "OBS_P_AMPLITUDE_NORMAL",
+            "OBS_PR_INTERVAL_NORMAL"
+        ],
+        "optional_observations": [],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Rhythm",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/normal-sinus-rhythm-ecg-criteria-sinoatrial-node/",
+        "limitations": "The source requires a regular rhythm and a constant PR interval, but provides no numeric or mappable definitions for regularity or PR interval constancy therefore these criteria cannot be represented as observations using the allowed feature set."
+    },
+    {
+        "diagnosis_id": "SINUS_BRADYCARDIA",
+        "diagnosis_name": "Sinus bradycardia",
+        "required_observations": [
+            "OBS_HEART_RATE_BELOW_50_BPM"
+        ],
+        "optional_observations": [
+            "OBS_P_PRECEDES_QRS",
+            "OBS_P_POSITIVE_LEAD_II",
+            "OBS_P_DURATION_NORMAL",
+            "OBS_P_AMPLITUDE_NORMAL",
+            "OBS_PR_INTERVAL_NORMAL"
+        ],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Arrhythmia",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/sinus-bradycardia-ecg-causes-treatment/",
+        "limitations": "Regular rhythm and constant P-wave morphology are described but cannot be mapped to the allowed observation features."
+    },
+    {
+        "diagnosis_id": "SINUS_TACHYCARDIA",
+        "diagnosis_name": "Sinus Tachycardia",
+        "required_observations": [
+            "OBS_HEART_RATE_ABOVE_100_BPM"
+
+        ],
+        "optional_observations": [ 
+            "OBS_P_PRECEDES_QRS",
+            "OBS_P_POSITIVE_LEAD_II",
+            "OBS_ST_FORM_HORIZONTAL_V3_TO_V6",
+            "OBS_ST_FORM_UPSLOPING_V3_TO_V6"
+
+        ],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Supraventricular Tachyarrhythmia",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/sinus-tachycardia-causes-ecg-inappropriate-management/",
+        "limitations": "Regular rhythm and constant P-wave morphology are described but cannot be represented with the allowed observation features."
+    },
+    {
+        "diagnosis_id": "ATRIAL_FIBRILLATION",
+        "diagnosis_name": "Atrial Fibrillation",
+        "required_observations": [
+            "OBS_P_WAVES_ABSENT",
+            "OBS_HEART_RATE_100_TO_180_BPM"
+        ],
+        "optional_observations": [],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Supraventricular Arrhythmia",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/atrial-fibrillation-ecg-ekg-causes-classification-management/",
+        "limitations": "The source explicitly describes a completely irregular ventricular rhythm and the presence of fibrillatory (f) waves at a frequency of 300–600 waves per minute. Rhythm irregularity and fibrillatory wave frequency cannot be represented using the allowed observation feature interface and are therefore not encoded as observations."
+    },
+    {
+        "diagnosis_id": "FIRST_DEGREE_AV_BLOCK_WITH_NORMAL_QRS",
+        "diagnosis_name": "First-degree atrioventricular block",
+        "required_observations": [
+            "OBS_PR_INTERVAL_PROLONGED",
+            "OBS_QRS_DURATION_NORMAL"
+        ],
+        "optional_observations": ["OBS_P_PRECEDES_QRS"],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Atrioventricular Conduction Disorder",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/ecg-first-degree-av-block-i-1-criteria-management/",
+        "limitations": "The source states that all P waves are followed by QRS complexes but provides no beat-to-beat interval variability data. No lead-specific PR criteria are provided."
+    },
+    {
+        "diagnosis_id": "FIRST_DEGREE_AV_BLOCK_WITH_WIDE_QRS",
+        "diagnosis_name": "FIRST_DEGREE_AV_BLOCK_WITH_WIDE_QRS",
+        "required_observations": [
+            "OBS_PR_INTERVAL_PROLONGED",
+            "OBS_QRS_DURATION_WIDE"
+        ],
+        "optional_observations": ["OBS_P_PRECEDES_QRS"],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Atrioventricular Conduction Disorder",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/ecg-first-degree-av-block-i-1-criteria-management/",
+        "limitations": "The source associates wide QRS complexes with higher progression risk but does not define additional quantitative conduction parameters."
+    },
+    {
+        "diagnosis_id": "LEFT_BUNDLE_BRANCH_BLOCK_COMPLETE",
+        "diagnosis_name": "Complete Left Bundle Branch Block",
+        "required_observations": [
+            "OBS_QRS_DURATION_WIDE",
+            "OBS_S_WAVE_DEEP_V1_V2",
+            "OBS_S_WAVE_BROAD_V1_V2",
+            "OBS_RWPT_PROLONGED_V5_V6",
+            "OBS_ST_DEPRESSION_LEFT_SIDED",
+            "OBS_T_WAVE_INVERSION_LEFT_SIDED",
+            "OBS_ST_ELEVATION_V1_V3",
+            "OBS_T_POSITIVE_V1_V3"
+        ],
+        "optional_observations": [
+            "OBS_RWTP_GE_60_V5_V6"
+        ],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Conduction Disorder",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/left-bundle-branch-block-lbbb-ecg-criteria-treatment/",
+        "limitations": "ST-segment elevation magnitude described as 'rarely exceeds 5 mm' cannot be mapped to allowed amplitude features. Descriptive morphology such as 'notched' waves cannot be fully encoded beyond QRS type or polarity."
+    },
+    {
+        "diagnosis_id": "LEFT_BUNDLE_BRANCH_BLOCK_INCOMPLETE",
+        "diagnosis_name": "Incomplete Left Bundle Branch Block",
+        "required_observations": [
+            "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS"
+        ],
+        "optional_observations": [
+            "OBS_R_WAVE_PEAK_TIME_GE_60_MS_V5_V6",
+            "OBS_ABSENT_SEPTAL_Q_WAVE_V5_V6_I_AVL"
+        ],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Conduction Disorder",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/left-bundle-branch-block-lbbb-ecg-criteria-treatment/",
+        "limitations": "R-wave peak time and notched ascending limb morphology are described textually and cannot be fully represented beyond duration or QRS type in the allowed observation schema."
+    },
+    {
+        "diagnosis_id": "LEFT_VENTRICULAR_HYPERTROPHY",
+        "diagnosis_name": "Left Ventricular Hypertrophy",
+        "required_observations": [
+            "OBS_R_aVL_HIGH_AMPLITUDE",
+            "OBS_R_WAVE_HIGH_V5_V6",
+            "OBS_R_WAVE_HIGH_I",
+            "OBS_S_WAVE_DEEP_aVR_LVH",
+            "OBS_RWPT_PROLONGED_LEFT_SIDE_LVH",
+            "OBS_P_MITRALE",
+            "OBS_QRS_DURATION_PROLONGED_90"],
+        "optional_observations": [],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Ventricular Hypertrophy",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/ecg-left-ventricular-hypertrophy-lvh-clinical-characteristics/",
+        "limitations": "Multiple explicitly stated ECG features could not be mapped due to feature constraints, including ST–segment depression or elevation patterns, T wave inversion morphology, left axis deviation, R wave peak time values, P mitrale, QT/QTc prolongation without numeric thresholds, QRS notching, and the full Romhilt–Estes point based logic."
+    },
+    {
+        "diagnosis_id": "MYOCARDIAL_INFARCTION",
+        "diagnosis_name": "Myocardial Infarction (ECG Pattern)",
+        "required_observations": [
+            "OBS_ST_SEGMENT_DEPRESSION",
+            "OBS_ST_FORM_DECLINING"
+        ],
+        "optional_observations": [],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Myocardial Infarction",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/myocardial-ischemia-infarction-reaction-ecg-changes-symptoms/",
+        "limitations": "This diagnosis represents an ECG pattern consistent with myocardial infarction based on ST-segment abnormalities. It does not differentiate acute, evolving, or confirmed infarction and does not require pathological Q-waves."
+    },
+    {
+        "diagnosis_id": "Q_WAVE_MYOCARDIAL_INFARCTION",
+        "diagnosis_name": "Q-wave myocardial infarction",
+        "required_observations": [
+            "OBS_PATHOLOGICAL_Q_WAVE_V2_V3",
+            "OBS_PATHOLOGICAL_Q_WAVE_OTHER_LEADS"
+
+        ],
+        "optional_observations": [],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "required_lead_count": 2,
+        "required_leads_relation": "contiguous",
+        "category": "Myocardial Infarction",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/ecg-criteria-myocardial-infarction-pathological-q-waves-r-waves/",
+        "limitations": ""
+    },
+    {
+    "diagnosis_id": "MYOCARDIAL_ISCHEMIA",
+    "diagnosis_name": "Myocardial Ischemia",
+    "required_observations": [
+        "OBS_ST_SEGMENT_DEPRESSION",
+        "OBS_T_WAVE_INVERSION"
+    ],
+    "optional_observations": [],
+    "required_semantics": "majority",
+    "required_min_fraction": 0.6,
+    "category": "Ischemic Heart Disease",
+    "suppresses": [],
+    "source": "https://ecgwaves.com/topic/myocardial-ischemia-infarction-reaction-ecg-changes-symptoms/",
+    "limitations": "ECGWAVES states that isolated T-wave inversions never indicate acute ischemia. T-wave changes without ST-segment deviation indicate post-ischemic changes rather than ongoing ischemia. Advanced patterns such as Wellens, de Winter's sign, hyperacute T-waves, symmetry, and pseudonormalization cannot be represented with the available feature set."
+    },
+
+    {
+        "diagnosis_id": "RIGHT_BUNDLE_BRANCH_BLOCK",
+        "diagnosis_name": "Right Bundle Branch Block",
+        "required_observations": [
+            "OBS_QRS_DURATION_WIDE",
+            "OBS_R_PRIME_PRESENT_V1_V2",
+            "OBS_R_PRIME_GT_R_V1_V2",
+            "OBS_S_WAVE_BROAD_LATERAL_LEADS",
+            "OBS_S_WAVE_DURATION_Gt_40_V6_I",
+            "OBS_ST_DEPRESSION_V1_V2",
+            "OBS_T_WAVE_INVERSION_V1_V2",
+            "OBS_T_WAVE_POSITIVE_LATERAL_LEADS"
+        ],
+        "optional_observations": [
+        ],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Intraventricular Conduction Block",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/right-bundle-branch-block-rbbb-ecg-criteria-treatment/",
+        "limitations": "Morphologic descriptions such as 'QRS resembling the letter M', 'rsr’/rsR’/rSR’ patterns', 'occasionally S-wave does not reach baseline', and 'broad and notched R-wave with R-wave peak time >0.05 seconds' cannot be fully mapped to allowed numeric observation features without inventing representations."
+    },
+    {
+        "diagnosis_id": "RIGHT_VENTRICULAR_HYPERTROPHY",
+        "diagnosis_name": "Right Ventricular Hypertrophy",
+        "required_observations": [
+            "OBS_RWPT_PROLONGED",
+            "OBS_S_WAVE_DEEP_LEFT_SIDED_RVH"
+        ],
+        "optional_observations": [
+            "OBS_ST_DECLINATION_QRS_POSITIVE_V1_TO_V3",
+            "OBS_ST_UPSLOPE_QRS_NEGATIVE_V1_TO_V3",
+            "OBS_P_PULMONALE",
+            "OBS_R_WAVE_HIGH_V1_V2",
+            "OBS_QRS_DURATION_BELOW_120_MS"
+            
+        ],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.8,
+        "category": "Ventricular Hypertrophy",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/right-ventricular-hypertrophy-ecg-ekg-criteria/",
+        "limitations": "The source describes large R waves relative to S waves in V1–V2, smaller R waves in V5–V6/I/aVL, right axis deviation, S waves in leads I–III, prolonged R-wave peak time (35–55 ms), and P pulmonale, but these findings lack numeric thresholds or use parameters (axis, R/S ratio, peak time) not available in the permitted observation feature set and therefore could not be mapped."
+    },
+    {
+        "diagnosis_id": "VENTRICULAR_RHYTHM",
+        "diagnosis_name": "Ventricular Rhythm",
+        "required_observations": [
+            "OBS_QRS_DURATION_WIDE",
+            "OBS_HEART_RATE_20_TO_40_BPM"
+        ],
+        "optional_observations": [],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Ventricular Arrhythmia",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/ventricular-rhythm-and-accelerated-ventricular-rhythm-idioventricular-rhythm/",
+        "limitations": "The criteria '3 or more consecutive ventricular beats', 'regular rhythm', and 'discordant ST-T segments' are explicitly stated in the source but cannot be mapped to the allowed observation features. ST-T discordance directionality is qualitative and not representable using the permitted features."
+    }
+
+]
