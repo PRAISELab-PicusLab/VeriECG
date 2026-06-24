@@ -19,7 +19,8 @@ Richiede:
 """
 
 import sys
-sys.path.append("/content/drive/MyDrive/Tiro/GEM")
+sys.path.append("/leonardo_work/CESMA_leonardo/_HI_Luisa-Ciniglio/external/GEM")
+sys.path.append("/leonardo_work/CESMA_leonardo/_HI_Luisa-Ciniglio/mapping")
 
 
 import os
@@ -29,8 +30,9 @@ from pathlib import Path
 
 import torch
 from torch.utils.data import Dataset, DataLoader
-from torch.optim import AdamW
 from torch.nn.utils import clip_grad_norm_
+import bitsandbytes as bnb
+from peft import LoraConfig, get_peft_model
 
 from PIL import Image
 import wfdb
@@ -200,6 +202,19 @@ def train_rl_multimodal(
     )
     model.config.use_cache = False
 
+    lora_config = LoraConfig(
+        r=16,
+        lora_alpha=32,
+        lora_dropout=0.05,
+        target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
+        task_type="CAUSAL_LM",
+    )
+    model = get_peft_model(model, lora_config)
+    model.print_trainable_parameters()
+
+    model.gradient_checkpointing_enable()
+    model.enable_input_require_grads()
+
     # inizializza vision tower
     vision_tower = model.get_vision_tower()
     image_processor = vision_tower.image_processor
@@ -225,7 +240,9 @@ def train_rl_multimodal(
     # ------------------------------
     # Ottimizzatore
     # ------------------------------
-    optimizer = AdamW(model.parameters(), lr=lr)
+    optimizer = bnb.optim.AdamW8bit(
+        filter(lambda p: p.requires_grad, model.parameters()), lr=lr
+    )
 
     # ------------------------------
     # Loop RL
@@ -322,3 +339,20 @@ def train_rl_multimodal(
         tokenizer.save_pretrained(ckpt)
 
     print("\n🎉 RL multimodale completato!")
+
+
+# ============================================================
+# MAIN
+# ============================================================
+
+if __name__ == "__main__":
+    BASE = Path(__file__).resolve().parents[1]
+
+    train_rl_multimodal(
+        model_path=str(BASE / "models" / "GEM_model"),
+        rl_dataset_path=str(BASE / "RL" / "rl_dataset.json"),
+        ptbxl_path=str(BASE / "data" / "ptbxl_subset.json"),
+        image_folder=str(BASE / "data" / "ecg_images" / "gen_images"),
+        ecg_folder=str(BASE / "data" / "ptbxl_subset"),
+        output_dir=str(BASE / "RL" / "checkpoints"),
+    )
