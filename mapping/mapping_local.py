@@ -1,19 +1,48 @@
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import json
 import re
+from pathlib import Path
+
+# ============================================================
+# LISTE OBS / DIAG (caricate da mapping/OBS_LIST.json e DIAG_LIST.json)
+# ============================================================
+
+_MAPPING_DIR = Path(__file__).resolve().parent
+
+with open(_MAPPING_DIR / "OBS_LIST.json", "r") as f:
+    _OBS_LIST = json.load(f)
+
+with open(_MAPPING_DIR / "DIAG_LIST.json", "r") as f:
+    _DIAG_LIST = json.load(f)
+
+OBS_LIST_STR = "\n".join(
+    f"{o['id']}: {o['description']} ({o['feature']})" for o in _OBS_LIST
+)
+DIAG_LIST_STR = "\n".join(
+    f"{d['diagnosis_id']}: {d['diagnosis_name']}" for d in _DIAG_LIST
+)
 
 # ============================================================
 # CARICAMENTO MODELLO LOCALE
 # ============================================================
 
-MAPPING_MODEL = "abacusai/dracarys-llama-3.1-70b-instruct"
+# Scaricato offline su /leonardo_scratch via setup/download_dracarys.py
+# (il nodo di calcolo non ha accesso a internet)
+MAPPING_MODEL = "/leonardo_scratch/large/userexternal/vmoscato/models/dracarys-llama-3.1-70b-instruct"
 
 print("🔄 Loading Dracarys‑Llama‑3.1‑70B‑Instruct for claim extraction...")
+_bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_compute_dtype=torch.bfloat16,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_use_double_quant=True,
+)
+
 map_tokenizer = AutoTokenizer.from_pretrained(MAPPING_MODEL, use_fast=False)
 map_model = AutoModelForCausalLM.from_pretrained(
     MAPPING_MODEL,
-    torch_dtype=torch.bfloat16,
+    quantization_config=_bnb_config,
     device_map="auto"
 )
 map_model.eval()
