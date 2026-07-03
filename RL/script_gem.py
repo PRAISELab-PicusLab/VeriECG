@@ -69,6 +69,13 @@ def compute_reward_jha25(
 # In[ ]:
 
 
+# Monta Drive se serve (in Colab)
+from google.colab import drive
+drive.mount('/content/drive')
+
+# In[ ]:
+
+
 # Installazione UNICA e coerente delle dipendenze per il training RL.
 # NIENTE piu' disinstallazioni a meta' notebook: le versioni sono fissate
 # una volta sola, qui, e non vengono piu' toccate.
@@ -106,6 +113,7 @@ from pathlib import Path
 # ============================================================
 
 BASE = Path(__file__).resolve().parents[1]
+
 _MAPPING_DIR = BASE / "mapping"
 
 with open(_MAPPING_DIR / "OBS_LIST.json", "r") as f:
@@ -358,7 +366,7 @@ import wfdb
 os.environ["ACCELERATE_DISABLE_MAPPING"] = "1"
 os.environ["TRANSFORMERS_NO_ACCELERATE"] = "1"
 
-BASE = Path(__file__).resolve().parents[1]
+BASE = Path("/content/drive/MyDrive/TIRO")
 sys.path.append(str(BASE / "GEM"))
 sys.path.append(str(BASE / "mapping"))
 sys.path.append(str(BASE))
@@ -371,17 +379,25 @@ from llava.constants import IGNORE_INDEX, IMAGE_TOKEN_INDEX
 # transformers 4.38 passa 'cache_position' a forward() durante generate(), ma
 # la forward di GEM (LlavaLlamaForCausalLM, basata su una LLaVA piu' vecchia)
 # non lo accetta -> TypeError 'unexpected keyword argument cache_position'.
-# Lo scartiamo prima di chiamare la forward originale: LlamaModel ricalcola
-# cache_position internamente quando e' None, quindi ignorarlo qui e' sicuro.
-# (La 4.37.2 usata per l'inferenza non passava cache_position.)
+# Lo scartiamo prima di chiamare la forward originale (LlamaModel ricalcola
+# cache_position internamente quando e' None, quindi e' sicuro ignorarlo).
+# IMPORTANTE: si usa functools.wraps cosi' inspect.signature() segue __wrapped__
+# e vede la firma ORIGINALE (con attention_mask, ecgs, images, position_ids...):
+# altrimenti _validate_model_kwargs di generate() segnalerebbe 'attention_mask
+# not used'. E attention_mask SERVE: la 4.38 ci ricava position_ids dentro
+# prepare_inputs_for_generation (senza, position_ids resta None -> crash).
+import functools as _functools
 from llava.model.language_model.llava_llama import LlavaLlamaForCausalLM as _LlavaLlamaForCausalLM
-if not getattr(_LlavaLlamaForCausalLM, '_cache_position_patched', False):
-    _orig_llava_forward = _LlavaLlamaForCausalLM.forward
-    def _forward_no_cache_position(self, *args, cache_position=None, **kwargs):
-        return _orig_llava_forward(self, *args, **kwargs)
-    _LlavaLlamaForCausalLM.forward = _forward_no_cache_position
-    _LlavaLlamaForCausalLM._cache_position_patched = True
-    print('[patch] LlavaLlamaForCausalLM.forward: cache_position ignorato (compat 4.38)')
+# salva la forward ORIGINALE una sola volta; ri-eseguendo la cella si riparte
+# sempre da quella (niente wrapper impilati).
+if not hasattr(_LlavaLlamaForCausalLM, '_orig_forward_unpatched'):
+    _LlavaLlamaForCausalLM._orig_forward_unpatched = _LlavaLlamaForCausalLM.forward
+_orig_llava_forward = _LlavaLlamaForCausalLM._orig_forward_unpatched
+@_functools.wraps(_orig_llava_forward)
+def _forward_no_cache_position(self, *args, cache_position=None, **kwargs):
+    return _orig_llava_forward(self, *args, **kwargs)
+_LlavaLlamaForCausalLM.forward = _forward_no_cache_position
+print('[patch] forward: cache_position ignorato, firma originale preservata (compat 4.38)')
 
 # Controllo esplicito: queste funzioni devono essere gia' presenti nel
 # kernel (definite nelle celle precedenti). Se manca qualcosa, meglio un
@@ -543,14 +559,18 @@ def generate_gem(model, tokenizer, input_ids, attention_mask, ecgs, images, max_
         # come primo argomento POSIZIONALE. 'temperature' rimosso: con
         # do_sample=False e' ignorato (e in alcune versioni di transformers
         # temperature=0.0 solleva 'temperature must be strictly positive').
-        # NB: NON si passa attention_mask a generate(). Con batch_size=1 non c'e'
-        # padding, quindi e' tutto-uni e superfluo (prepare_inputs_labels_for_multimodal
-        # lo ricrea da None). Inoltre, col monkey-patch di cache_position la firma
-        # introspezionata da _validate_model_kwargs (transformers 4.38) non espone
-        # piu' attention_mask, che verrebbe segnalato come 'model_kwargs not used'.
-        # L'inferenza ufficiale di GEM (model_ecg_resume.py) non lo passa.
+        # attention_mask SERVE con transformers 4.38: prepare_inputs_for_generation
+        # ci ricava position_ids (senza, position_ids resta None -> crash su
+        # cache_position). Ora e' di nuovo accettato perche' il patch della forward
+        # preserva la firma (functools.wraps sopra).
+        # inputs= (keyword) e NON posizionale: la generate di GEM chiama il
+        # parametro 'inputs', e durante il training il modello e' un PeftModel,
+        # la cui generate() NON accetta argomenti posizionali ('takes 1 positional
+        # argument but 2 were given'). Come keyword funziona sia col modello nudo
+        # (baseline) sia col PeftModel (training).
         out = model.generate(
-            input_ids.to(model.device),
+            inputs=input_ids.to(model.device),
+            attention_mask=attention_mask.to(model.device),
             ecgs=ecgs.to(model.device),
             images=images.to(model.device),
             max_new_tokens=max_new_tokens,
