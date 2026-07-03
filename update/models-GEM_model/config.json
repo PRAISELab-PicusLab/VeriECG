@@ -42,7 +42,7 @@
   "intermediate_size": 11008,
   "max_position_embeddings": 4096,
   "mm_ecg_tower":  "ecg_coca",
-  "mm_ecg_checkpoint": "/content/drive/MyDrive/Tiro/GEM/ecg_coca/checkpoint/cpt_wfep_epoch_20.pt",
+  "mm_ecg_checkpoint": "/content/drive/MyDrive/TIRO/GEM/ecg_coca/checkpoint/cpt_wfep_epoch_20.pt",
   "mm_hidden_size": 1024,
   "mm_patch_merge_type": "flat",
   "mm_projector_lr": null,

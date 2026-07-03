@@ -4,7 +4,15 @@ import torch.nn as nn
 from transformers import CLIPVisionModel, CLIPImageProcessor, CLIPVisionConfig
 
 import sys
-sys.path.insert(0, "/home/jupyter/LLaVA")
+
+from pathlib import Path
+
+ROOT = "/content/drive/MyDrive/TIRO/GEM"
+
+sys.path.insert(0, ROOT)
+
+print("ROOT set to:", ROOT)
+
 from ecg_coca.training import get_ecg_encoder
 
 
