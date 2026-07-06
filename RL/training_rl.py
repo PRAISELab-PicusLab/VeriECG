@@ -63,8 +63,8 @@ _LlavaLlamaForCausalLM.forward = _forward_no_cache_position
 from reward_definition import (
     compute_reward_jha25,
     compute_claim_metrics,
-    # compute_reward_strutturata,   # reward strutturata DISATTIVATA (non testata)
-    reward_fn_training,             # = compute_reward_jha25 (unica reward attiva)
+    compute_reward_strutturata,
+    reward_fn_training,   # = la reward scelta in reward_definition (default: strutturata)
 )
 from mapping import (
     extract_claims_from_report_local,
@@ -251,8 +251,9 @@ def generate_gem(model, tokenizer, input_ids, attention_mask, ecgs, images, max_
         if do_sample:
             # Rollout ON-POLICY: si campiona dalla distribuzione PIENA a
             # temperatura, SENZA top_p/top_k. Troncare renderebbe il rollout
-            # off-policy rispetto ai logprob del PPO (calcolati a T=1 con un
-            # semplice log_softmax) -> importance ratio distorto. Si sovrascrivono
+            # off-policy rispetto ai logprob del PPO -> importance ratio distorto.
+            # (I logprob del PPO sono calcolati alla STESSA temperatura, cioe'
+            # logits/sample_temperature, quindi il rollout resta on-policy.) Si sovrascrivono
             # i valori del generation_config di GEM (temperature=0.7/top_p=0.8/
             # top_k=20) che altrimenti verrebbero applicati in sampling.
             gen_kwargs["temperature"] = temperature
@@ -743,8 +744,13 @@ def train_rl_multimodal(
                 logits_old_i = logits_old[i, pred_positions, :]
                 values_i = values_all[i, pred_positions]
 
-                lp = torch.log_softmax(logits_i, dim=-1)
-                lp_old = torch.log_softmax(logits_old_i, dim=-1)
+                # ON-POLICY: i logprob sono calcolati alla STESSA temperatura del
+                # rollout campionato (logits / sample_temperature), per la policy
+                # nuova E per la base/riferimento. Cosi' l'importance ratio e il KL
+                # sono coerenti con la distribuzione da cui si e' campionato.
+                # A sample_temperature=1.0 e' un no-op (divisione per 1).
+                lp = torch.log_softmax(logits_i / sample_temperature, dim=-1)
+                lp_old = torch.log_softmax(logits_old_i / sample_temperature, dim=-1)
 
                 lp_chosen = lp.gather(1, tokens_resp.unsqueeze(-1)).squeeze(-1)
                 lp_old_chosen = lp_old.gather(1, tokens_resp.unsqueeze(-1)).squeeze(-1)
@@ -952,9 +958,10 @@ kl_coef                               : {kl_coef}
 sample_temperature (rollout training) : {sample_temperature}
 
 --- REWARD ---
-compute_reward_jha25: DENSA, F-beta con scale=10.0, beta=0.5 (F-0.5: la precision pesa
-il doppio della recall). NESSUN gating. claim = set(osservazioni + diagnosi);
-metriche claim-level stile Jha25 / DocLens.
+Funzione reward usata (training + eval): {reward_fn_training.__name__}
+  - compute_reward_jha25:       F-beta densa (scale=10, beta=0.5) su claim uniti (obs+diag).
+  - compute_reward_strutturata: 4 quadranti (diagnosi x osservazioni), R_pos=10 P_o=6 P_d=3.
+Metriche precision/recall/f1: claim-level stile Jha25 / DocLens (claim = set(obs+diag)).
 
 --- RL / DETTAGLI IMPLEMENTATIVI ---
 - GEM-7B caricato in 4-bit (QLoRA). LoRA: r={_lc.r}, alpha={_lc.lora_alpha}, dropout={_lc.lora_dropout}, target={list(_lc.target_modules)}.
