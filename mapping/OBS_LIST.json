@@ -1,2083 +1,281 @@
 [
-
-    {
-        "id": "OBS_HEART_RATE_NORMAL_RANGE",
-        "description": "Heart rate between 50 and 100 beats per minute",
-        "feature": "Global Heart Rate (bpm)"
-    },
-            {
-        "id": "OBS_HEART_RATE_BELOW_60_BPM",
-        "description": "Heart rate slower than 60 beats per minute",
-        "feature": "Global Heart Rate (bpm)"
-    },
-    {
-        "id": "OBS_HEART_RATE_ABOVE_100_BPM",
-        "description": "Heart rate exceeds 100 beats per minute",
-        "feature": "Global Heart Rate (bpm)"
-    },
-    {      
-        "id": "OBS_HEART_RATE_100_TO_180_BPM",
-        "description": "Heart rate between 100 and 180 beats per minute",
-        "feature": "Global Heart Rate (bpm)"
-    },
-    {
-        "id": "OBS_HEART_RATE_20_TO_40_BPM",
-        "description": "Heart rate between 20 and 40 beats per minute",
-        "feature": "Global Heart Rate (bpm)"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_I",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_II",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_III",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_aVR",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_aVL",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_aVF",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_V1",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_V2",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_V3",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_V4",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_V5",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_P_PRECEDES_QRS_LEAD_V6",
-        "description": "P wave precedes every QRS complex",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_I",
-        "description": "P wave is positive in lead I",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_II",
-        "description": "P wave is positive in lead II",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_III",
-        "description": "P wave is positive in lead III",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_aVR",
-        "description": "P wave is positive in lead aVR",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_aVL",
-        "description": "P wave is positive in lead aVL",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_aVF",
-        "description": "P wave is positive in lead aVF",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_V1",
-        "description": "P wave is positive in lead V1",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_V2",
-        "description": "P wave is positive in lead V2",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_V3",
-        "description": "P wave is positive in lead V3",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_V4",
-        "description": "P wave is positive in lead V4",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_V5",
-        "description": "P wave is positive in lead V5",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_P_POSITIVE_LEAD_V6",
-        "description": "P wave is positive in lead V6",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_I",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_II",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_III",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_aVR",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_aVL",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_aVF",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_V1",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_V2",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_V3",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_V4",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_V5",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_P_DURATION_NORMAL_LEAD_V6",
-        "description": "P wave duration is less than or equal to 120 ms",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_I",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_II",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead II"
-    },{
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_III",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead III"
-    },{
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_aVR",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVR"
-    },{
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_aVL",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_aVF",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVF"
-    },{
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_V1",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V1"
-    },{
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_V2",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V2"
-    },{
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_V3",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V3"
-    },{
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_V4",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V4"
-    },{
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_V5",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V5"
-    },{
-        "id": "OBS_P_AMPLITUDE_NORMAL_LEAD_V6",
-        "description": "P wave amplitude is less than or equal to 2.5 mm",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_P_PULMONALE_LEAD_I",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_P_PULMONALE_LEAD_II",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead II"
-    },{
-        "id": "OBS_P_PULMONALE_LEAD_III",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead III"
-    },{
-        "id": "OBS_P_PULMONALE_LEAD_aVR",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVR"
-    },{
-        "id": "OBS_P_PULMONALE_LEAD_aVL",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_P_PULMONALE_LEAD_aVF",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVF"
-    },{
-        "id": "OBS_P_PULMONALE_LEAD_V1",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V1"
-    },{
-        "id": "OBS_P_PULMONALE_LEAD_V2",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V2"
-    },{
-        "id": "OBS_P_PULMONALE_LEAD_V3",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V3"
-    },{
-        "id": "OBS_P_PULMONALE_LEAD_V4",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V4"
-    },{
-        "id": "OBS_P_PULMONALE_LEAD_V5",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V5"
-    },{
-        "id": "OBS_P_PULMONALE_LEAD_V6",
-        "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_P_MITRALE_LEAD_I",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_P_MITRALE_LEAD_II",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_P_MITRALE_LEAD_III",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_P_MITRALE_LEAD_aVR",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_P_MITRALE_LEAD_aVL",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead aVL"
-    },
-     {
-        "id": "OBS_P_MITRALE_LEAD_aVF",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead aVF"
-    }, {
-        "id": "OBS_P_MITRALE_LEAD_V1",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V1"
-    }, {
-        "id": "OBS_P_MITRALE_LEAD_V2",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V2"
-    }, {
-        "id": "OBS_P_MITRALE_LEAD_V3",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V3"
-    }, {
-        "id": "OBS_P_MITRALE_LEAD_V4",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V4"
-    }, {
-        "id": "OBS_P_MITRALE_LEAD_V5",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V5"
-    }, {
-        "id": "OBS_P_MITRALE_LEAD_V6",
-        "description": "P wave duration is greater than 120 ms (P mitrale)",
-        "feature": "P Duration (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_P_WAVES_ABSENT_LEAD_I",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_P_WAVES_ABSENT_LEAD_I",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_P_WAVES_ABSENT_LEAD_II",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_P_WAVES_ABSENT_LEAD_III",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_P_WAVES_ABSENT_LEAD_aVR",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVR"
-    },{
-        "id": "OBS_P_WAVES_ABSENT_LEAD_aVL",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVL"
-    },{
-        "id": "OBS_P_WAVES_ABSENT_LEAD_aVF",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead aVF"
-    },{
-        "id": "OBS_P_WAVES_ABSENT_LEAD_V1",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V1"
-    },{
-        "id": "OBS_P_WAVES_ABSENT_LEAD_V2",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V2"
-    },{
-        "id": "OBS_P_WAVES_ABSENT_LEAD_V3",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V3"
-    },{
-        "id": "OBS_P_WAVES_ABSENT_LEAD_V4",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V4"
-    },{
-        "id": "OBS_P_WAVES_ABSENT_LEAD_V5",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V5"
-    },{
-        "id": "OBS_P_WAVES_ABSENT_LEAD_V6",
-        "description": "Absence of P waves on ECG",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_I",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_II",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_III",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_aVR",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_aVL",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_aVF",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_V1",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_V2",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_V3",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_V4",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_V5",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_PROLONGED_LEAD_V6",
-        "description": "PR interval duration is prolonged",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_NORMAL_LEAD_I",
-        "description": "PR interval is between 120 ms and 220 ms",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_NORMAL_LEAD_II",
-        "description": "PR interval is between 120 ms and 220 ms",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_NORMAL_LEAD_III",
-        "description": "PR interval is between 120 ms and 220 ms",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_NORMAL_LEAD_aVR",
-        "description": "PR interval is between 120 ms and 220 ms",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_NORMAL_LEAD_aVL",
-        "description": "PR interval is between 120 ms and 220 ms",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_NORMAL_LEAD_aVF",
-        "description": "PR interval is between 120 ms and 220 ms",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_NORMAL_LEAD_V1",
-        "description": "PR interval is between 120 ms and 220 ms",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_NORMAL_LEAD_V2",
-        "description": "PR interval is between 120 ms and 220 ms",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_NORMAL_LEAD_V3",
-        "description": "PR interval is between 120 ms and 220 ms",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_PR_INTERVAL_NORMAL_LEAD_V4",
-        "description": "PR interval is between 120 ms and 220 ms",
-        "feature": "PR Interval (ms)",
-        "lead": "Lead V4"
-    },
-    {
-       "id":"OBS_PR_INTERVAL_NORMAL_LEAD_V5",
-       "description":"PR interval is between 120 ms and 220 ms",
-       "feature":"PR Interval (ms)",
-       "lead":"Lead V5"
-    },
-    {
-       "id":"OBS_PR_INTERVAL_NORMAL_LEAD_V6",
-       "description":"PR interval is between 120 ms and 220 ms",
-       "feature":"PR Interval (ms)",
-       "lead":"Lead V6"
-    },
-    {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_I",
-        "description": "High R-wave amplitude in lead I",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_II",
-        "description": "High R-wave amplitude in lead II",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_III",
-        "description": "High R-wave amplitude in lead III",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_aVR",
-        "description": "High R-wave amplitude in lead aVR",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_aVL",
-        "description": "High R-wave amplitude in lead aVL",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_aVF",
-        "description": "High R-wave amplitude in lead aVF",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_V1",
-        "description": "High R-wave amplitude in lead V1",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead V1"
-    },
-     {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_V2",
-        "description": "High R-wave amplitude in lead V2",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead V2"
-    },
-     {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_V3",
-        "description": "High R-wave amplitude in lead V3",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead V3"
-    },
-     {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_V4",
-        "description": "High R-wave amplitude in lead V4",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead V4"
-    },
-     {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_V5",
-        "description": "High R-wave amplitude in lead V5",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead V5"
-    },
-     {
-        "id": "OBS_R_WAVE_HIGH_AMPLITUDE_LEAD_V6",
-        "description": "High R-wave amplitude in lead V6",
-        "feature": "R Amplitude (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_I",
-        "description": "Prolonged R-wave peak time in Lead I",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead I"
-    }, 
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_II",
-        "description": "Prolonged R-wave peak time in Lead II",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead II"
-    }, 
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_III",
-        "description": "Prolonged R-wave peak time in Lead III",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead III"
-    }, 
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_aVR",
-        "description": "Prolonged R-wave peak time in Lead aVR",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead aVR"
-    }, 
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_aVL",
-        "description": "Prolonged R-wave peak time in Lead aVL",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead aVL"
-    }, 
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_aVF",
-        "description": "Prolonged R-wave peak time in Lead aVF",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead aVF"
-    }, 
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_V1",
-        "description": "Prolonged R-wave peak time in Lead V1",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead V1"
-    }, 
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_V2",
-        "description": "Prolonged R-wave peak time in Lead V2",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead V2"
-    }, 
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_V3",
-        "description": "Prolonged R-wave peak time in Lead V3",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead V3"
-    }, 
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_V4",
-        "description": "Prolonged R-wave peak time in Lead V4",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead V4"
-    }, 
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_V5",
-        "description": "Prolonged R-wave peak time in Lead V5",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead V5"
-    },    
-    {
-        "id": "OBS_RWPT_PROLONGED_LEAD_V6",
-        "description": "Prolonged R-wave peak time in Lead V6",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_I",
-        "description": "Absence of normal septal q-waves in leads I",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_II",
-        "description": "Absence of normal septal q-waves in leads II",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_III",
-        "description": "Absence of normal septal q-waves in leads III",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_aVR",
-        "description": "Absence of normal septal q-waves in leads aVR",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_aVL",
-        "description": "Absence of normal septal q-waves in leads aVL",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_aVF",
-        "description": "Absence of normal septal q-waves in leads aVF",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_V1",
-        "description": "Absence of normal septal q-waves in leads V1",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_V2",
-        "description": "Absence of normal septal q-waves in leads V2",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_V3",
-        "description": "Absence of normal septal q-waves in leads V3",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_V4",
-        "description": "Absence of normal septal q-waves in leads V4",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_V5",
-        "description": "Absence of normal septal q-waves in leads V5",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_ABSENT_SEPTAL_Q_WAVE_LEAD_V6",
-        "description": "Absence of normal septal q-waves in leads V6",
-        "feature": "Q Amplitude (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_I",
-        "description": "Q-wave in leads I with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_II",
-        "description": "Q-wave in leads II with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_III",
-        "description": "Q-wave in leads III with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_aVR",
-        "description": "Q-wave in leads aVR with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_aVL",
-        "description": "Q-wave in leads aVL with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_aVF",
-        "description": "Q-wave in leads aVF with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_V1",
-        "description": "Q-wave in leads V1 with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_V2",
-        "description": "Q-wave in leads V2 with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_V3",
-        "description": "Q-wave in leads V3 with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_V4",
-        "description": "Q-wave in leads V4 with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_V5",
-        "description": "Q-wave in leads V5 with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_PATHOLOGICAL_Q_WAVE__LEAD_V6",
-        "description": "Q-wave in leads V6 with duration ≥ 0.02 s or presence of QS complex",
-        "feature": "Q Duration (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_I",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_II",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_III",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_aVR",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_aVL",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_aVF",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVF"
-    },{
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_V1",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V1"
-    },{
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_V2",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V2"
-    },{
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_V3",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V3"
-    },{
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_V4",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V4"
-    },{
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_V5",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V5"
-    },{
-        "id": "OBS_QRS_DURATION_NORMAL_LEAD_V6",
-        "description": "QRS duration is within normal limits (less than 120)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_I",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_II",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_III",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_aVR",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_aVL",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_aVF",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_V1",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_V2",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_V3",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_V4",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_V5",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_QRS_DURATION_WIDE_LEAD_V6",
-        "description": "QRS duration is prolonged (greater or equal to 120 ms)",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_I",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_II",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead II"
-    },{
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_III",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_aVR",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_aVL",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_aVF",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_V1",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_V2",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_V3",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_V4",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_V5",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS_LEAD_V6",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_I",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_II",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_III",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_aVR",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_aVL",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_aVF",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_V1",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_V2",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_V3",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_V4",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_V5",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS_LEAD_V6",
-        "description": "QRS duration is below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_I",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_II",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_III",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_aVR",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_aVL",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_aVF",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_V1",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_V2",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_V3",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_V4",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_V5",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_S_WAVE_DEEP_LEAD_V6",
-        "description": "Deep S-wave amplitude in leads supporting RVH",
-        "feature": "S Amplitude (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_I",
-        "description": "Broad S-wave in lead I. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_II",
-        "description": "Broad S-wave in lead II. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_III",
-        "description": "Broad S-wave in lead III. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_aVR",
-        "description": "Broad S-wave in lead aVR. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_aVL",
-        "description": "Broad S-wave in lead aVL. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_aVF",
-        "description": "Broad S-wave in lead aVF. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_V1",
-        "description": "Broad S-wave in lead V1. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_V2",
-        "description": "Broad S-wave in lead V2. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_V3",
-        "description": "Broad S-wave in lead V3. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_V4",
-        "description": "Broad S-wave in lead V4. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_V5",
-        "description": "Broad S-wave in lead V5. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_S_WAVE_BROAD_LEAD_V6",
-        "description": "Broad S-wave in lead V6. Duration greater or equal to 40 ms",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_I",
-        "description": "S-wave duration exceeds 40 ms in lead I",
-        "feature": "S Duration (ms)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_II",
-        "description": "S-wave duration exceeds 40 ms in lead II",
-        "feature": "S Duration (ms)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_III",
-        "description": "S-wave duration exceeds 40 ms in lead III",
-        "feature": "S Duration (ms)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_aVR",
-        "description": "S-wave duration exceeds 40 ms in lead aVR",
-        "feature": "S Duration (ms)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_aVL",
-        "description": "S-wave duration exceeds 40 ms in lead aVL",
-        "feature": "S Duration (ms)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_aVF",
-        "description": "S-wave duration exceeds 40 ms in lead aVF",
-        "feature": "S Duration (ms)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_V1",
-        "description": "S-wave duration exceeds 40 ms in lead V1",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_V2",
-        "description": "S-wave duration exceeds 40 ms in lead V2",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_V3",
-        "description": "S-wave duration exceeds 40 ms in lead V3",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_V4",
-        "description": "S-wave duration exceeds 40 ms in lead V4",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_V5",
-        "description": "S-wave duration exceeds 40 ms in lead V5",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_S_WAVE_DURATION_GT_40_LEAD_V6",
-        "description": "S-wave duration exceeds 40 ms in lead V6",
-        "feature": "S Duration (ms)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_I",
-        "description": "ST-segment depression in lead I",
-        "feature": "ST Level (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_II",
-        "description": "ST-segment depression in lead II",
-        "feature": "ST Level (mV)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_III",
-        "description": "ST-segment depression in lead III",
-        "feature": "ST Level (mV)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_aVR",
-        "description": "ST-segment depression in lead aVR",
-        "feature": "ST Level (mV)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_aVL",
-        "description": "ST-segment depression in lead aVL",
-        "feature": "ST Level (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_aVF",
-        "description": "ST-segment depression in lead aVF",
-        "feature": "ST Level (mV)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_V1",
-        "description": "ST-segment depression in lead V1",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_V2",
-        "description": "ST-segment depression in lead V2",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_V3",
-        "description": "ST-segment depression in lead V3",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_V4",
-        "description": "ST-segment depression in lead V4",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_V5",
-        "description": "ST-segment depression in lead V5",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_ST_DEPRESSION_LEAD_V6",
-        "description": "ST-segment depression in lead V6",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_I",
-        "description": "ST-segment elevation in lead I",
-        "feature": "ST Level (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_II",
-        "description": "ST-segment elevation in lead II",
-        "feature": "ST Level (mV)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_III",
-        "description": "ST-segment elevation in lead III",
-        "feature": "ST Level (mV)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_aVR",
-        "description": "ST-segment elevation in lead aVR",
-        "feature": "ST Level (mV)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_aVL",
-        "description": "ST-segment elevation in lead aVL",
-        "feature": "ST Level (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_aVF",
-        "description": "ST-segment elevation in lead aVF",
-        "feature": "ST Level (mV)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_V1",
-        "description": "ST-segment elevation in lead V1",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_V2",
-        "description": "ST-segment elevation in lead V2",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_V3",
-        "description": "ST-segment elevation in lead V3",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_V4",
-        "description": "ST-segment elevation in lead V4",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_V5",
-        "description": "ST-segment elevation in lead V5",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_ST_ELEVATION_LEAD_V6",
-        "description": "ST-segment elevation in lead V6",
-        "feature": "ST Level (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_I",
-        "description": "ST segment is horizontal in lead I",
-        "feature": "ST Form",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_II",
-        "description": "ST segment is horizontal in lead II",
-        "feature": "ST Form",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_III",
-        "description": "ST segment is horizontal in lead III",
-        "feature": "ST Form",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_aVR",
-        "description": "ST segment is horizontal in lead aVR",
-        "feature": "ST Form",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_aVL",
-        "description": "ST segment is horizontal in lead aVL",
-        "feature": "ST Form",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_aVF",
-        "description": "ST segment is horizontal in lead aVF",
-        "feature": "ST Form",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_V1",
-        "description": "ST segment is horizontal in lead V1",
-        "feature": "ST Form",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_V2",
-        "description": "ST segment is horizontal in lead V2",
-        "feature": "ST Form",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_V3",
-        "description": "ST segment is horizontal in lead V3",
-        "feature": "ST Form",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_V4",
-        "description": "ST segment is horizontal in lead V4",
-        "feature": "ST Form",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_V5",
-        "description": "ST segment is horizontal in lead V5",
-        "feature": "ST Form",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_ST_FORM_HORIZONTAL_LEAD_V6",
-        "description": "ST segment is horizontal in lead V6",
-        "feature": "ST Form",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_I",
-        "description": "ST segment is upsloping in lead I",
-        "feature": "ST Form",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_II",
-        "description": "ST segment is upsloping in lead II",
-        "feature": "ST Form",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_III",
-        "description": "ST segment is upsloping in lead III",
-        "feature": "ST Form",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_aVR",
-        "description": "ST segment is upsloping in lead aVR",
-        "feature": "ST Form",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_aVL",
-        "description": "ST segment is upsloping in lead aVL",
-        "feature": "ST Form",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_aVF",
-        "description": "ST segment is upsloping in lead aVF",
-        "feature": "ST Form",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_V1",
-        "description": "ST segment is upsloping in lead V1",
-        "feature": "ST Form",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_V2",
-        "description": "ST segment is upsloping in lead V2",
-        "feature": "ST Form",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_V3",
-        "description": "ST segment is upsloping in lead V3",
-        "feature": "ST Form",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_V4",
-        "description": "ST segment is upsloping in lead V4",
-        "feature": "ST Form",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_V5",
-        "description": "ST segment is upsloping in lead V5",
-        "feature": "ST Form",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_ST_FORM_UPSLOPING_LEAD_V6",
-        "description": "ST segment is upsloping in lead V6",
-        "feature": "ST Form",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_I",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_II",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_III",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_aVR",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_aVL",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_aVF",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_V1",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_V2",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_V3",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_V4",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_V5",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_ST_FORM_DECLINING_LEAD_V6",
-        "description": "ST segment shows downsloping morphology",
-        "feature": "ST Form",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_I",
-        "description": "Inverted T-waves in lead I",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_II",
-        "description": "Inverted T-waves in lead II",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_III",
-        "description": "Inverted T-waves in lead III",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_aVR",
-        "description": "Inverted T-waves in lead aVR",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_aVL",
-        "description": "Inverted T-waves in lead aVL",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_aVF",
-        "description": "Inverted T-waves in lead aVF",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_V1",
-        "description": "Inverted T-waves in lead V1",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_V2",
-        "description": "Inverted T-waves in lead V2",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_V3",
-        "description": "Inverted T-waves in lead V3",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_V4",
-        "description": "Inverted T-waves in lead V4",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_V5",
-        "description": "Inverted T-waves in lead V5",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_T_WAVE_INVERSION_LEAD_V6",
-        "description": "Inverted T-waves in lead V6",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_I",
-        "description": "Positive T-waves in lead I",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_II",
-        "description": "Positive T-waves in lead II",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_III",
-        "description": "Positive T-waves in lead III",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_aVR",
-        "description": "Positive T-waves in lead aVR",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_aVL",
-        "description": "Positive T-waves in lead aVL",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_aVF",
-        "description": "Positive T-waves in lead aVF",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_V1",
-        "description": "Positive T-waves in lead V1",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_V2",
-        "description": "Positive T-waves in lead V2",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_V3",
-        "description": "Positive T-waves in lead V3",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_V4",
-        "description": "Positive T-waves in lead V4",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_V5",
-        "description": "Positive T-waves in lead V5",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_T_WAVE_POSITIVE_LEAD_V6",
-        "description": "Positive T-waves in lead V6",
-        "feature": "T Amplitude (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_I",
-        "description": "Presence of a second R-wave (R′) in lead I",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_II",
-        "description": "Presence of a second R-wave (R′) in lead II",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_III",
-        "description": "Presence of a second R-wave (R′) in lead III",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_aVR",
-        "description": "Presence of a second R-wave (R′) in lead aVR",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_aVL",
-        "description": "Presence of a second R-wave (R′) in lead aVL",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_aVF",
-        "description": "Presence of a second R-wave (R′) in lead aVF",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_V1",
-        "description": "Presence of a second R-wave (R′) in lead V1",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_V2",
-        "description": "Presence of a second R-wave (R′) in lead V2",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_V3",
-        "description": "Presence of a second R-wave (R′) in lead V3",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_V4",
-        "description": "Presence of a second R-wave (R′) in lead V4",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_V5",
-        "description": "Presence of a second R-wave (R′) in lead V5",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_R_PRIME_PRESENT_LEAD_V6",
-        "description": "Presence of a second R-wave (R′) in lead V6",
-        "feature": "R' Amplitude (mV)",
-        "lead": "Lead V6"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_I",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead I",
-        "feature": "R'/R Ratio",
-        "lead": "Lead I"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_II",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead II",
-        "feature": "R'/R Ratio",
-        "lead": "Lead II"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_III",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead III",
-        "feature": "R'/R Ratio",
-        "lead": "Lead III"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_aVR",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead aVR",
-        "feature": "R'/R Ratio",
-        "lead": "Lead aVR"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_aVL",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead aVL",
-        "feature": "R'/R Ratio",
-        "lead": "Lead aVL"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_aVF",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead aVF",
-        "feature": "R'/R Ratio",
-        "lead": "Lead aVF"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_V1",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead V1",
-        "feature": "R'/R Ratio",
-        "lead": "Lead V1"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_V2",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead V2",
-        "feature": "R'/R Ratio",
-        "lead": "Lead V2"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_V3",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead V3",
-        "feature": "R'/R Ratio",
-        "lead": "Lead V3"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_V4",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead V4",
-        "feature": "R'/R Ratio",
-        "lead": "Lead V4"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_V5",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead V5",
-        "feature": "R'/R Ratio",
-        "lead": "Lead V5"
-    },
-    {
-        "id": "OBS_R_PRIME_GT_R_V6",
-        "description": "Second R-wave (R′) is larger than the first R-wave in lead V6",
-        "feature": "R'/R Ratio",
-        "lead": "Lead V6"
-    }
+  {
+    "id": "OBS_HEART_RATE_NORMAL_RANGE",
+    "description": "Ventricular heart rate between 50 and 100 beats per minute",
+    "feature": "Global Heart Rate (bpm)"
+  },
+  {
+    "id": "OBS_HEART_RATE_BELOW_50_BPM",
+    "description": "Ventricular heart rate slower than 50 beats per minute",
+    "feature": "Global Heart Rate (bpm)"
+  },
+  {
+    "id": "OBS_HEART_RATE_ABOVE_100_BPM",
+    "description": "Ventricular heart rate exceeds 100 beats per minute",
+    "feature": "Global Heart Rate (bpm)"
+  },
+  {
+    "id": "OBS_P_PRECEDES_QRS",
+    "description": "P wave precedes every QRS complex",
+    "feature": "PR Interval (ms)",
+    "lead": "Any"
+  },
+  {
+    "id": "OBS_P_DURATION_NORMAL",
+    "description": "P wave duration is less than or equal to 120 ms",
+    "feature": "P Duration (ms)",
+    "lead": "Any"
+  },
+  {
+    "id": "OBS_P_AMPLITUDE_NORMAL",
+    "description": "P wave amplitude is less than or equal to 2.5 mm",
+    "feature": "P Amplitude (mV)"
+  },
+  {
+    "id": "OBS_P_PULMONALE",
+    "description": "P wave amplitude is greater than 2.5 mm (P pulmonale)",
+    "feature": "P Amplitude (mV)"
+  },
+  {
+    "id": "OBS_P_MITRALE",
+    "description": "P wave duration is greater than 120 ms (P mitrale)",
+    "feature": "P Duration (ms)"
+  },
+  {
+    "id": "OBS_P_WAVES_ABSENT",
+    "description": "Absence of P waves on ECG",
+    "feature": "P Amplitude (mV)"
+  },
+  {
+    "id": "OBS_PR_INTERVAL_PROLONGED",
+    "description": "PR interval duration is prolonged",
+    "feature": "PR Interval (ms)"
+  },
+  {
+    "id": "OBS_PR_INTERVAL_NORMAL",
+    "description": "PR interval is between 120 ms and 220 ms",
+    "feature": "PR Interval (ms)"
+  },
+  {
+    "id": "OBS_R_WAVE_HIGH_V1_V2",
+    "description": "High R-wave amplitude in right precordial leads",
+    "feature": "R Amplitude (mV)",
+    "lead": "Lead V1,Lead V2"
+  },
+  {
+    "id": "OBS_R_WAVE_HIGH_V5_V6",
+    "description": "High R-wave amplitude in left-sided leads",
+    "feature": "R Amplitude (mV)",
+    "lead": "Lead V5,Lead V6,Lead aVL"
+  },
+  {
+    "id": "OBS_R_WAVE_HIGH_I",
+    "description": "High R-wave amplitude in left-sided leads",
+    "feature": "R Amplitude (mV)",
+    "lead": "Lead I"
+  },
+  {
+    "id": "OBS_R_aVL_HIGH_AMPLITUDE",
+    "description": "R wave amplitude in lead aVL exceeds 11 mm",
+    "feature": "R Amplitude (mV)",
+    "lead": "Lead aVL"
+  },
+  {
+    "id": "OBS_RWPT_PROLONGED_V5_V6",
+    "description": "Prolonged R-wave peak time in lateral leads V5 and V6",
+    "feature": "R Wave Peak Time (ms)"
+  },
+  {
+    "id": "OBS_RWPT_PROLONGED",
+    "description": "R wave peak time is between 35 ms and 55 ms",
+    "feature": "R Wave Peak Time (ms)"
+  },
+  {
+    "id": "OBS_ABSENT_SEPTAL_Q_WAVE_V5_V6_I_AVL",
+    "description": "Absence of normal septal q-waves in left-sided leads",
+    "feature": "Q Amplitude (mV)",
+    "lead": "Lead V5, Lead V6, Lead I, Lead aVL"
+  },
+  {
+    "id": "OBS_PATHOLOGICAL_Q_WAVE_V2_V3",
+    "description": "Q-wave in leads V2–V3 with duration ≥ 0.02 s or presence of QS complex",
+    "feature": "Q Duration (ms)",
+    "lead": "Lead, V2, Lead V3"
+  },
+  {
+    "id": "OBS_PATHOLOGICAL_Q_WAVE_OTHER_LEADS",
+    "description": "Q-wave in leads other than V2–V3 with duration ≥ 0.03 s and depth ≥ 1 mm, or QS complex",
+    "feature": "Q Duration (ms)",
+    "lead": "Lead I, Lead II, Lead III, Lead aVR, Lead aVL, Lead aVF, Lead V1, Lead V4, Lead V5, Lead V6"
+  },
+  {
+    "id": "OBS_QRS_DURATION_NORMAL",
+    "description": "QRS duration is within normal limits",
+    "feature": "QRS Duration (ms)"
+  },
+  {
+    "id": "OBS_QRS_DURATION_WIDE",
+    "description": "QRS duration is prolonged (wide QRS)",
+    "feature": "QRS Duration (ms)"
+  },
+  {
+    "id": "OBS_S_WAVE_DEEP_LEFT_SIDED_RVH",
+    "description": "Deep S-wave amplitude in left-sided leads supporting RVH",
+    "feature": "S Amplitude (mV)",
+    "lead": "Lead I,Lead aVL,Lead V5,Lead V6"
+  },
+  {
+    "id": "OBS_S_WAVE_DEEP_aVR_LVH",
+    "description": "Deep S-wave amplitude in aVR",
+    "feature": "S Amplitude (mV)",
+    "lead": "Lead aVR"
+  },
+  {
+    "id": "OBS_S_WAVE_DEEP_V1_V2",
+    "description": "Deep S-wave in right precordial leads V1 and V2",
+    "feature": "S Amplitude (mV)",
+    "lead": "Lead V1,Lead V2"
+  },
+  {
+    "id": "OBS_S_WAVE_BROAD_V1_V2",
+    "description": "Broad S-wave in right precordial leads V1 and V2",
+    "feature": "S Duration (ms)",
+    "lead": "Lead V1,Lead V2"
+  },
+  {
+    "id": "OBS_S_WAVE_BROAD_LATERAL_LEADS",
+    "description": "Broad S-wave present in lateral leads",
+    "feature": "S Duration (ms)",
+    "lead": "Lead I,Lead aVL,Lead V5,Lead V6"
+  },
+  {
+    "id": "OBS_S_WAVE_DURATION_GT_40_V6_I",
+    "description": "S-wave duration exceeds 40 ms in V6 and I",
+    "feature": "S Duration (ms)",
+    "lead": "Lead V6, Lead I"
+  },
+  {
+    "id": "OBS_ST_DEPRESSION_LEFT_SIDED",
+    "description": "ST-segment depression in left-sided leads",
+    "feature": "ST Level (mV)",
+    "lead": "Lead V5, Lead V6, Lead I, Lead aVL"
+  },
+  {
+    "id": "OBS_ST_ELEVATION_V1_V3",
+    "description": "ST-segment elevation in anterior precordial leads V1–V3 (discordant repolarization pattern in LBBB)",
+    "feature": "ST Level (mV)",
+    "lead": "Lead V1,Lead V2,Lead V3"
+  },
+  {
+    "id": "OBS_ST_FORM_HORIZONTAL_V3_TO_V6",
+    "description": "ST segment is horizontal in leads V3 to V6",
+    "feature": "ST Form",
+    "lead": "Lead V3, Lead V4, Lead V5, Lead V6"
+  },
+  {
+    "id": "OBS_ST_FORM_UPSLOPING_V3_TO_V6",
+    "description": "ST segment is upsloping in leads V3 to V6",
+    "feature": "ST Form",
+    "lead": "Lead V3, Lead V4, Lead V5, Lead V6"
+  },
+  {
+    "id": "OBS_ST_SEGMENT_DEPRESSION",
+    "description": "ST-segment depression observed on ECG during subendocardial ischemia",
+    "feature": "ST Level (mV)"
+  },
+  {
+    "id": "OBS_ST_FORM_DECLINING",
+    "description": "ST segment shows downsloping morphology",
+    "feature": "ST Form"
+  },
+  {
+    "id": "OBS_ST_DECLINATION_QRS_POSITIVE_V1_TO_V3",
+    "description": "ST segment shows downward slope with positive QRS (ST-QRS discordance)",
+    "feature": "ST Form",
+    "lead": "Lead V1, Lead V2, Lead V3"
+  },
+  {
+    "id": "OBS_ST_UPSLOPE_QRS_NEGATIVE_V1_TO_V3",
+    "description": "ST segment shows upward slope with negative QRS (ST-QRS discordance)",
+    "feature": "ST Form",
+    "lead": "Lead V1, Lead V2, Lead V3"
+  },
+  {
+    "id": "OBS_T_WAVE_INVERSION_V1_V2",
+    "description": "Inverted T-waves in V1–V2",
+    "feature": "T Amplitude (mV)",
+    "lead": "Lead V1, Lead V2"
+  },
+  {
+    "id": "OBS_T_WAVE_POSITIVE_LATERAL_LEADS",
+    "description": "Positive T-waves in lateral leads",
+    "feature": "T Amplitude (mV)",
+    "lead": "Lead V5, Lead V6, Lead I, Lead aVL"
+  },
+  {
+    "id": "OBS_T_WAVE_INVERSION",
+    "description": "Inverted (negative) T-wave",
+    "feature": "T Amplitude (mV)",
+    "lead": "Any"
+  },
+  {
+    "id": "OBS_T_WAVE_INVERSION_LEFT_SIDED",
+    "description": "T-wave inversion in left-sided leads",
+    "feature": "T Amplitude (mV)",
+    "lead": "Lead V5, Lead V6, Lead I, Lead aVL"
+  },
+  {
+    "id": "OBS_T_POSITIVE_V1_V3",
+    "description": "Positive T-waves in leads V1–V3",
+    "feature": "T Amplitude (mV)",
+    "lead": "Lead V1, Lead V2, Lead V3"
+  },
+  {
+    "id": "OBS_R_PRIME_PRESENT_V1_V2",
+    "description": "Presence of a second R-wave (R′) in leads V1–V2",
+    "feature": "R' Amplitude (mV)",
+    "lead": "Lead V1, Lead V2"
+  },
+  {
+    "id": "OBS_R_PRIME_GT_R_V1_V2",
+    "description": "Second R-wave (R′) is larger than the first R-wave in V1–V2",
+    "feature": "R'/R Ratio",
+    "lead": "Lead V1, Lead V2"
+  },
+  {
+    "id": "OBS_ST_DEPRESSION_V1_V2",
+    "description": "ST-segment depression in leads V1-V2 (secondary repolarization change in RBBB)",
+    "feature": "ST Level (mV)",
+    "lead": "Lead V1, Lead V2"
+  },
+  {
+    "id": "OBS_RWPT_GE_60_V5_V6",
+    "description": "R-wave peak time >= 60 ms in leads V5-V6 (complete LBBB criterion)",
+    "feature": "R Wave Peak Time (ms)",
+    "lead": "Lead V5,Lead V6"
+  },
+  {
+    "id": "OBS_RWPT_GT_50_V1",
+    "description": "R-wave peak time > 50 ms in lead V1 (complete RBBB criterion)",
+    "feature": "R Wave Peak Time (ms)",
+    "lead": "Lead V1"
+  },
+  {
+    "id": "OBS_QRS_LOW_VOLTAGE_LIMB",
+    "description": "Low QRS voltage in limb leads (< 0.5 mV)",
+    "feature": "QRS Amplitude (mV)",
+    "lead": "Lead I, Lead II, Lead III, Lead aVR, Lead aVL, Lead aVF"
+  },
+  {
+    "id": "OBS_QRS_LOW_VOLTAGE_PRECORDIAL",
+    "description": "Low QRS voltage in precordial leads (< 1 mV)",
+    "feature": "QRS Amplitude (mV)",
+    "lead": "Lead V1, Lead V2, Lead V3, Lead V4, Lead V5, Lead V6"
+  },
+  {
+    "id": "OBS_PATHOLOGICAL_Q_WAVE_DEPTH",
+    "description": "Pathological Q-wave depth >= 0.1 mV (>= 1 mm) in leads other than V2-V3",
+    "feature": "Q Amplitude (mV)",
+    "lead": "Lead I, Lead II, Lead III, Lead aVR, Lead aVL, Lead aVF, Lead V1, Lead V4, Lead V5, Lead V6"
+  }
 ]

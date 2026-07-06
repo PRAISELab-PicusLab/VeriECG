@@ -7,7 +7,9 @@ import sys
 
 from pathlib import Path
 
-ROOT = "/content/drive/MyDrive/TIRO/GEM"
+
+ROOT = Path(__file__).resolve().parent
+
 
 sys.path.insert(0, ROOT)
 

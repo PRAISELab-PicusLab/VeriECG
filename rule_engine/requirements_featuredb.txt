@@ -1,0 +1,32 @@
+# ============================================================
+# REQUIREMENTS per l'ambiente virtuale di FeatureDB
+# (necessario per estrazione_feature_deterministiche_da_segnale.py)
+# ============================================================
+#
+# IMPORTANTE — versione di Python:
+#   Usare Python 3.9 o 3.10. FeatureDB richiede numpy==1.21.2, che ha wheel
+#   SOLO fino a Python 3.10. Con Python >=3.11 l'install fallisce; con numpy 2.x
+#   l'estrazione fallisce silenziosamente ("0 accepted beats") perche' il codice
+#   usa np.float / np.int, rimossi in numpy 2.0.
+#
+# COME CREARE L'AMBIENTE (Linux/Mac; su Windows usare la sintassi equivalente):
+#   python3.9 -m venv venv_featuredb
+#   source venv_featuredb/bin/activate
+#   pip install --upgrade pip setuptools wheel
+#   pip install -r requirements_featuredb.txt
+#
+# COME LANCIARE L'ESTRAZIONE (con il venv attivo):
+#   python estrazione_feature_deterministiche_da_segnale.py
+#
+# NB: il codice di FeatureDB deve stare in  TIRO/rule_engine/FeatureDB/
+#     (lo script fa: sys.path.append(BASE/"rule_engine"/"FeatureDB")).
+# ============================================================
+
+biosppy
+numpy==1.21.2
+scipy==1.7.1
+neurokit2==0.1.4.1
+wfdb==3.4.1
+pyhrv==0.4.0
+seaborn
+dtw==1.4.0

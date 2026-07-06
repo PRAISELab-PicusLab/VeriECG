@@ -1,23 +1,25 @@
 [
-
     {
         "id": "OBS_HEART_RATE_NORMAL_RANGE",
         "description": "Ventricular heart rate between 50 and 100 beats per minute",
         "feature": "Global Heart Rate (bpm)",
         "operator": "between",
-        "value": [50, 100],
+        "value": [
+            50,
+            100
+        ],
         "inclusive": true,
         "evaluation_level": "global",
         "presence_semantics": "exists",
         "source": "https://ecgwaves.com/topic/normal-sinus-rhythm-ecg-criteria-sinoatrial-node/",
         "notes": ""
     },
-            {
-        "id": "OBS_HEART_RATE_BELOW_60_BPM",
-        "description": "Ventricular heart rate slower than 60 beats per minute",
+    {
+        "id": "OBS_HEART_RATE_BELOW_50_BPM",
+        "description": "Ventricular heart rate slower than 50 beats per minute",
         "feature": "Global Heart Rate (bpm)",
         "operator": "<",
-        "value": 60,
+        "value": 50,
         "evaluation_level": "global",
         "presence_semantics": "exists",
         "source": "https://litfl.com/sinus-bradycardia-ecg-library/",
@@ -34,28 +36,6 @@
         "source": "https://ecgwaves.com/topic/sinus-tachycardia-causes-ecg-inappropriate-management/",
         "notes": ""
     },
-    {      
-        "id": "OBS_HEART_RATE_100_TO_180_BPM",
-        "description": "Ventricular rate between 100 and 180 beats per minute",
-        "feature": "Global Heart Rate (bpm)",
-        "operator": "between",
-        "value": [100, 180],
-        "evaluation_level": "global",
-        "presence_semantics": "exists",
-        "source": "https://ecgwaves.com/topic/atrial-fibrillation-ecg-ekg-causes-classification-management/",
-        "notes": "Upper bound of typical ventricular rate stated for atrial fibrillation."
-    },
-    {
-        "id": "OBS_HEART_RATE_20_TO_40_BPM",
-        "description": "Ventricular rate between 20 and 40 beats per minute",
-        "feature": "Global Heart Rate (bpm)",
-        "operator": "between",
-        "value": [20, 40],
-        "evaluation_level": "global",
-        "presence_semantics": "exists",
-        "source": "https://ecgwaves.com/topic/ventricular-rhythm-and-accelerated-ventricular-rhythm-idioventricular-rhythm/",
-        "notes": "Lower bound of ventricular rhythm heart rate range explicitly stated in the source."
-    },
     {
         "id": "OBS_P_PRECEDES_QRS",
         "description": "P wave precedes every QRS complex",
@@ -70,19 +50,6 @@
         "notes": "Proxy mapping: P wave preceding QRS implies PR interval greater than zero."
     },
     {
-        "id": "OBS_P_POSITIVE_LEAD_II",
-        "description": "P wave is positive in lead II",
-        "feature": "P Amplitude (mV)",
-        "lead": "Lead II",
-        "operator": ">",
-        "value": 0,
-        "evaluation_level": "beat",
-        "presence_semantics": "fraction",
-        "min_fraction": 0.8,
-        "source": "https://ecgwaves.com/topic/normal-sinus-rhythm-ecg-criteria-sinoatrial-node/",
-        "notes": "Proxy mapping: Positive P wave represented as amplitude greater than zero."
-    },
-    {
         "id": "OBS_P_DURATION_NORMAL",
         "description": "P wave duration is less than or equal to 120 ms",
         "feature": "P Duration (ms)",
@@ -92,7 +59,7 @@
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.8,
-        "source":"https://ecgwaves.com/topic/systematic-clinical-ecg-interpretation-review-guide/",
+        "source": "https://ecgwaves.com/topic/systematic-clinical-ecg-interpretation-review-guide/",
         "notes": "Normal P duration ≤ 0.12 s"
     },
     {
@@ -105,7 +72,7 @@
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.8,
-        "source":"https://ecgwaves.com/topic/systematic-clinical-ecg-interpretation-review-guide/",
+        "source": "https://ecgwaves.com/topic/systematic-clinical-ecg-interpretation-review-guide/",
         "notes": "Normal P amplitude ≤ 2.5 mm (0.25 mV)"
     },
     {
@@ -118,7 +85,7 @@
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
-        "source":"https://ecgwaves.com/topic/systematic-clinical-ecg-interpretation-review-guide/",
+        "source": "https://ecgwaves.com/topic/systematic-clinical-ecg-interpretation-review-guide/",
         "notes": "P pulmonale: P amplitude > 2.5 mm (0.25 mV)"
     },
     {
@@ -131,7 +98,7 @@
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
-        "source":"https://ecgwaves.com/topic/systematic-clinical-ecg-interpretation-review-guide/",
+        "source": "https://ecgwaves.com/topic/systematic-clinical-ecg-interpretation-review-guide/",
         "notes": "P mitrale: P duration > 120 ms"
     },
     {
@@ -152,8 +119,8 @@
         "description": "PR interval duration is prolonged",
         "feature": "PR Interval (ms)",
         "lead": "",
-        "operator": ">=",
-        "value": 220,
+        "operator": ">",
+        "value": 200,
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
@@ -166,11 +133,14 @@
         "feature": "PR Interval (ms)",
         "lead": "Any",
         "operator": "between",
-        "value": [120, 220],
+        "value": [
+            120,
+            200
+        ],
         "evaluation_level": "beat",
-        "presence_semantics": "fraction",   
+        "presence_semantics": "fraction",
         "min_fraction": 0.8,
-        "source":"https://ecgwaves.com/topic/systematic-clinical-ecg-interpretation-review-guide/",
+        "source": "https://ecgwaves.com/topic/systematic-clinical-ecg-interpretation-review-guide/",
         "notes": "Normal PR interval: 0.12–0.22 s"
     },
     {
@@ -183,10 +153,10 @@
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
-        "source":"https://litfl.com/right-ventricular-hypertrophy-rvh-ecg-library/",
+        "source": "https://litfl.com/right-ventricular-hypertrophy-rvh-ecg-library/",
         "notes": "In RVH, increased right ventricular electrical dominance produces increased R-wave amplitude in V1–V2. Threshold is operational."
     },
-        {
+    {
         "id": "OBS_R_WAVE_HIGH_V5_V6",
         "description": "High R-wave amplitude in left-sided leads",
         "feature": "R Amplitude (mV)",
@@ -196,10 +166,10 @@
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
-        "source":"https://ecgwaves.com/topic/ecg-left-ventricular-hypertrophy-lvh-clinical-characteristics/",
+        "source": "https://ecgwaves.com/topic/ecg-left-ventricular-hypertrophy-lvh-clinical-characteristics/",
         "notes": "In LVH, increased left ventricular mass produces high R-wave amplitudes in left-sided leads."
     },
-      {
+    {
         "id": "OBS_R_WAVE_HIGH_I",
         "description": "High R-wave amplitude in left-sided leads",
         "feature": "R Amplitude (mV)",
@@ -209,7 +179,7 @@
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
-        "source":"https://ecgwaves.com/topic/ecg-left-ventricular-hypertrophy-lvh-clinical-characteristics/",
+        "source": "https://ecgwaves.com/topic/ecg-left-ventricular-hypertrophy-lvh-clinical-characteristics/",
         "notes": "In LVH, increased left ventricular mass produces high R-wave amplitudes in left-sided leads."
     },
     {
@@ -237,45 +207,19 @@
         "min_fraction": 0.3,
         "source": "https://ecgwaves.com/topic/left-bundle-branch-block-lbbb-ecg-criteria-treatment/",
         "notes": "RWPT >45 ms in V5–V6 indicates delayed left ventricular activation, consistent with LBBB."
-    },    
-    {
-        "id": "OBS_RWPT_PROLONGED_LEFT_SIDED_LVH",
-        "description": "Prolonged R-wave peak time in left-sided leads",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead V5,Lead V6",
-        "operator": ">",
-        "value": 50,
-        "evaluation_level": "beat",
-        "presence_semantics": "fraction",
-        "min_fraction": 0.5,
-        "source":"https://litfl.com/left-ventricular-hypertrophy-lvh-ecg-library/",
-        "notes": "In left ventricular hypertrophy, increased myocardial mass causes delayed depolarization, which may manifest as prolonged R-wave peak time (>50 ms) in left-sided leads. This observation is supportive and not diagnostic by itself."
     },
     {
         "id": "OBS_RWPT_PROLONGED",
         "description": "R wave peak time is between 35 ms and 55 ms",
         "feature": "R Wave Peak Time (ms)",
         "lead": "Lead V1, Lead V2",
-        "operator": "between",
-        "value": [35,55],
+        "operator": ">",
+        "value": 35,
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.3,
-        "source":"https://ecgwaves.com/topic/right-ventricular-hypertrophy-ecg-ekg-criteria/",
+        "source": "https://ecgwaves.com/topic/right-ventricular-hypertrophy-ecg-ekg-criteria/",
         "notes": "Prolonged R wave peak time"
-    },
-        {
-        "id": "OBS_RWPT_GE_60_V5_V6",
-        "description": "R-wave peak time equal to or greater than 60 ms in leads V5 and V6",
-        "feature": "R Wave Peak Time (ms)",
-        "lead": "Lead V5, Lead V6",
-        "operator": ">=",
-        "value": 60,
-        "evaluation_level": "beat",
-        "presence_semantics": "fraction",
-        "min_fraction": 0.3,
-        "source": "https://ecgwaves.com/topic/left-bundle-branch-block-lbbb-ecg-criteria-treatment/",
-        "notes": "Mapped structurally to QRS duration due to schema constraints"
     },
     {
         "id": "OBS_ABSENT_SEPTAL_Q_WAVE_V5_V6_I_AVL",
@@ -321,8 +265,11 @@
         "description": "QRS duration is within normal limits",
         "feature": "QRS Duration (ms)",
         "lead": "Any",
-        "operator": "<",
-        "value": 120,
+        "operator": "between",
+        "value": [
+            80,
+            110
+        ],
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
@@ -333,54 +280,14 @@
         "id": "OBS_QRS_DURATION_WIDE",
         "description": "QRS duration is prolonged (wide QRS)",
         "feature": "QRS Duration (ms)",
-        "lead": "",
-        "operator": ">=",
-        "value": 120,
+        "lead": "Any",
+        "operator": ">",
+        "value": 110,
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
         "source": "https://ecgwaves.com/topic/ecg-first-degree-av-block-i-1-criteria-management/",
         "notes": "Wide QRS duration explicitly defined as ≥ 0.12 seconds in the source."
-    },
-    {
-        "id": "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS",
-        "description": "QRS duration greater than 100 ms and less than 120 ms",
-        "feature": "QRS Duration (ms)",
-        "lead": "",
-        "operator": "between",
-        "value": [100, 120],
-        "inclusive": false,
-        "evaluation_level": "beat",
-        "presence_semantics": "fraction",
-        "min_fraction": 0.5,
-        "source": "https://ecgwaves.com/topic/left-bundle-branch-block-lbbb-ecg-criteria-treatment/",
-        "notes": ""
-    },
-    {
-        "id": "OBS_QRS_DURATION_BELOW_120_MS",
-        "description": "QRS duration is slightly prolonged but remains below 120 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "",
-        "operator": "<",
-        "value": 120,
-        "evaluation_level": "beat",
-        "presence_semantics": "fraction",
-        "min_fraction": 0.5,
-        "source": "https://ecgwaves.com/topic/right-ventricular-hypertrophy-ecg-ekg-criteria/",
-        "notes": "Explicitly stated that QRS duration does not reach 120 ms unless bundle branch block is present."
-    },
-    {
-        "id": "OBS_QRS_DURATION_PROLONGED_90",
-        "description": "QRS duration is at least 90 milliseconds",
-        "feature": "QRS Duration (ms)",
-        "lead": "",
-        "operator": ">=",
-        "value": 90,
-        "evaluation_level": "beat",
-        "presence_semantics": "fraction",
-        "min_fraction": 0.5,
-        "source": "https://ecgwaves.com/topic/ecg-left-ventricular-hypertrophy-lvh-clinical-characteristics/",
-        "notes": "Threshold explicitly stated as part of the Romhilt–Estes score system."
     },
     {
         "id": "OBS_S_WAVE_DEEP_LEFT_SIDED_RVH",
@@ -392,7 +299,7 @@
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
-        "source":"https://litfl.com/right-ventricular-hypertrophy-rvh-ecg-library/",
+        "source": "https://litfl.com/right-ventricular-hypertrophy-rvh-ecg-library/",
         "notes": "In RVH, rightward ventricular depolarization results in deeper S-waves in left-sided leads. This observation is supportive and not diagnostic by itself."
     },
     {
@@ -405,7 +312,7 @@
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
-        "source":"https://litfl.com/left-ventricular-hypertrophy-lvh-ecg-library/",
+        "source": "https://litfl.com/left-ventricular-hypertrophy-lvh-ecg-library/",
         "notes": "S-wave amplitude >14 mm in aVR is a classical ECG voltage criterion for LVH reported in LITFL. This observation is supportive and not diagnostic by itself."
     },
     {
@@ -413,8 +320,8 @@
         "description": "Deep S-wave in right precordial leads V1 and V2",
         "feature": "S Amplitude (mV)",
         "lead": "Lead V1,Lead V2",
-        "operator": "<=",
-        "value": -0.5,
+        "operator": ">=",
+        "value": 0.5,
         "evaluation_level": "beat",
         "presence_semantics": "fraction",
         "min_fraction": 0.5,
@@ -423,7 +330,7 @@
             "https://ecgwaves.com/ecg-qrs-complex-q-r-s-wave-duration-interval/ [2](https://johnsonfrancis.org/professional/diagnostic-criteria-for-left-bundle-branch-block/)",
             "https://litfl.com/left-ventricular-hypertrophy-lvh-ecg-library/ [3](https://ecgwaves.com/course/the-ecg-book/)"
         ],
-        "notes": "ECGwaves describes a 'deep S-wave' in V1–V2 qualitatively (no numeric cutoff). The threshold ≤ −0.5 mV corresponds to ≥5 mm on standard ECG calibration (10 mm = 1 mV) and is used here as an operational cutoff to identify an S-wave of non‑trivial amplitude, consistent with voltage criteria commonly used in ECG interpretation literature."
+        "notes": "Corretto il segno (punto 5): 'S Amplitude (mV)' e' salvata come MAGNITUDINE POSITIVA (verificato sui dati estratti), quindi la soglia originale '<= -0.5' non si attivava mai. '>= 0.5 mV' corrisponde a >= 5 mm su calibrazione standard (10 mm = 1 mV): onda S profonda in V1-V2."
     },
     {
         "id": "OBS_S_WAVE_BROAD_V1_V2",
@@ -442,7 +349,7 @@
         ],
         "notes": "ECGwaves describes a 'broad S-wave' in V1–V2 qualitatively. The ≥40 ms cutoff corresponds to one small ECG box at 25 mm/s (standard ECG speed) and represents the minimal operational threshold for a non‑narrow terminal deflection, consistent with conduction‑delay literature."
     },
-     {
+    {
         "id": "OBS_S_WAVE_BROAD_LATERAL_LEADS",
         "description": "Broad S-wave present in lateral leads",
         "feature": "S Duration (ms)",
@@ -520,7 +427,7 @@
         "source": "https://ecgwaves.com/topic/sinus-tachycardia-causes-ecg-inappropriate-management/",
         "notes": ""
     },
-        {
+    {
         "id": "OBS_ST_SEGMENT_DEPRESSION",
         "description": "ST-segment depression observed on ECG during subendocardial ischemia",
         "feature": "ST Level (mV)",
@@ -545,7 +452,7 @@
         "min_fraction": 0.5,
         "source": "https://ecgwaves.com/topic/myocardial-ischemia-infarction-reaction-ecg-changes-symptoms/"
     },
-        {
+    {
         "id": "OBS_ST_DECLINATION_QRS_POSITIVE_V1_TO_V3",
         "description": "ST segment shows downward slope with positive QRS (ST-QRS discordance)",
         "feature": "ST Form",
@@ -659,5 +566,83 @@
         "min_fraction": 0.5,
         "source": "https://ecgwaves.com/topic/right-bundle-branch-block-rbbb-ecg-criteria-treatment/",
         "notes": "Source states R′ is virtually always larger than the first R-wave."
+    },
+    {
+        "id": "OBS_ST_DEPRESSION_V1_V2",
+        "description": "ST-segment depression in leads V1-V2 (secondary repolarization change in RBBB)",
+        "feature": "ST Level (mV)",
+        "lead": "Lead V1, Lead V2",
+        "operator": "<",
+        "value": -0.05,
+        "evaluation_level": "beat",
+        "presence_semantics": "fraction",
+        "min_fraction": 0.5,
+        "source": "Secondary repolarization changes in RBBB; soglia coerente con OBS_ST_SEGMENT_DEPRESSION",
+        "notes": "Aggiunta per allineare il riferimento required in RIGHT_BUNDLE_BRANCH_BLOCK. Feature disponibile: 'ST Level (mV)'."
+    },
+    {
+        "id": "OBS_RWPT_GE_60_V5_V6",
+        "description": "R-wave peak time >= 60 ms in leads V5-V6 (complete LBBB criterion)",
+        "feature": "R Wave Peak Time (ms)",
+        "lead": "Lead V5,Lead V6",
+        "operator": ">=",
+        "value": 60,
+        "evaluation_level": "beat",
+        "presence_semantics": "fraction",
+        "min_fraction": 0.3,
+        "source": "Feature ECG.docx (dominio cardiologo): '>60 ms in V5-V6 per LBBB completo'",
+        "notes": "Aggiunta per allineare i riferimenti OBS_RWTP_GE_60_V5_V6 / OBS_R_WAVE_PEAK_TIME_GE_60_MS_V5_V6 in LEFT_BUNDLE_BRANCH_BLOCK_*. Feature disponibile: 'R Wave Peak Time (ms)'."
+    },
+    {
+        "id": "OBS_RWPT_GT_50_V1",
+        "description": "R-wave peak time > 50 ms in lead V1 (complete RBBB criterion)",
+        "feature": "R Wave Peak Time (ms)",
+        "lead": "Lead V1",
+        "operator": ">",
+        "value": 50,
+        "evaluation_level": "beat",
+        "presence_semantics": "fraction",
+        "min_fraction": 0.3,
+        "source": "Feature ECG.docx (dominio cardiologo): '>50 ms in V1 per RBBB completo'",
+        "notes": "Aggiunta (punto 1). Feature disponibile: 'R Wave Peak Time (ms)'. Collegata come optional a RIGHT_BUNDLE_BRANCH_BLOCK."
+    },
+    {
+        "id": "OBS_QRS_LOW_VOLTAGE_LIMB",
+        "description": "Low QRS voltage in limb leads (< 0.5 mV)",
+        "feature": "QRS Amplitude (mV)",
+        "lead": "Lead I, Lead II, Lead III, Lead aVR, Lead aVL, Lead aVF",
+        "operator": "<",
+        "value": 0.5,
+        "evaluation_level": "beat",
+        "presence_semantics": "fraction",
+        "min_fraction": 0.5,
+        "source": "Feature ECG.docx (dominio cardiologo): 'Bassi voltaggi se < 0,5 mV derivazioni degli arti'",
+        "notes": "Aggiunta (punto 2). Feature disponibile: 'QRS Amplitude (mV)' (magnitudine picco-picco, positiva). Non collegata a nessuna diagnosi del dizionario attuale."
+    },
+    {
+        "id": "OBS_QRS_LOW_VOLTAGE_PRECORDIAL",
+        "description": "Low QRS voltage in precordial leads (< 1 mV)",
+        "feature": "QRS Amplitude (mV)",
+        "lead": "Lead V1, Lead V2, Lead V3, Lead V4, Lead V5, Lead V6",
+        "operator": "<",
+        "value": 1.0,
+        "evaluation_level": "beat",
+        "presence_semantics": "fraction",
+        "min_fraction": 0.5,
+        "source": "Feature ECG.docx (dominio cardiologo): '< 1 mV nelle precordiali'",
+        "notes": "Aggiunta (punto 2). Feature disponibile: 'QRS Amplitude (mV)'. Non collegata a nessuna diagnosi del dizionario attuale."
+    },
+    {
+        "id": "OBS_PATHOLOGICAL_Q_WAVE_DEPTH",
+        "description": "Pathological Q-wave depth >= 0.1 mV (>= 1 mm) in leads other than V2-V3",
+        "feature": "Q Amplitude (mV)",
+        "lead": "Lead I, Lead II, Lead III, Lead aVR, Lead aVL, Lead aVF, Lead V1, Lead V4, Lead V5, Lead V6",
+        "operator": ">=",
+        "value": 0.1,
+        "evaluation_level": "beat",
+        "presence_semantics": "fraction",
+        "min_fraction": 0.5,
+        "source": "Feature ECG.docx / Fourth Universal Definition of MI (2018): profondita' Q >= 1 mm",
+        "notes": "Aggiunta (punto 4). 'Q Amplitude (mV)' e' salvata come magnitudine positiva (verificato). Completa il criterio di durata di OBS_PATHOLOGICAL_Q_WAVE_OTHER_LEADS con la profondita'. Collegata come optional a Q_WAVE_MYOCARDIAL_INFARCTION."
     }
 ]

@@ -5,7 +5,6 @@
         "required_observations": [
             "OBS_HEART_RATE_NORMAL_RANGE",
             "OBS_P_PRECEDES_QRS",
-            "OBS_P_POSITIVE_LEAD_II",
             "OBS_P_DURATION_NORMAL",
             "OBS_P_AMPLITUDE_NORMAL",
             "OBS_PR_INTERVAL_NORMAL"
@@ -26,7 +25,6 @@
         ],
         "optional_observations": [
             "OBS_P_PRECEDES_QRS",
-            "OBS_P_POSITIVE_LEAD_II",
             "OBS_P_DURATION_NORMAL",
             "OBS_P_AMPLITUDE_NORMAL",
             "OBS_PR_INTERVAL_NORMAL"
@@ -43,14 +41,11 @@
         "diagnosis_name": "Sinus Tachycardia",
         "required_observations": [
             "OBS_HEART_RATE_ABOVE_100_BPM"
-
         ],
-        "optional_observations": [ 
+        "optional_observations": [
             "OBS_P_PRECEDES_QRS",
-            "OBS_P_POSITIVE_LEAD_II",
             "OBS_ST_FORM_HORIZONTAL_V3_TO_V6",
             "OBS_ST_FORM_UPSLOPING_V3_TO_V6"
-
         ],
         "required_semantics": "majority",
         "required_min_fraction": 0.6,
@@ -64,7 +59,7 @@
         "diagnosis_name": "Atrial Fibrillation",
         "required_observations": [
             "OBS_P_WAVES_ABSENT",
-            "OBS_HEART_RATE_100_TO_180_BPM"
+            "OBS_HEART_RATE_ABOVE_100_BPM"
         ],
         "optional_observations": [],
         "required_semantics": "majority",
@@ -81,7 +76,9 @@
             "OBS_PR_INTERVAL_PROLONGED",
             "OBS_QRS_DURATION_NORMAL"
         ],
-        "optional_observations": ["OBS_P_PRECEDES_QRS"],
+        "optional_observations": [
+            "OBS_P_PRECEDES_QRS"
+        ],
         "required_semantics": "majority",
         "required_min_fraction": 0.6,
         "category": "Atrioventricular Conduction Disorder",
@@ -96,7 +93,9 @@
             "OBS_PR_INTERVAL_PROLONGED",
             "OBS_QRS_DURATION_WIDE"
         ],
-        "optional_observations": ["OBS_P_PRECEDES_QRS"],
+        "optional_observations": [
+            "OBS_P_PRECEDES_QRS"
+        ],
         "required_semantics": "majority",
         "required_min_fraction": 0.6,
         "category": "Atrioventricular Conduction Disorder",
@@ -118,7 +117,7 @@
             "OBS_T_POSITIVE_V1_V3"
         ],
         "optional_observations": [
-            "OBS_RWTP_GE_60_V5_V6"
+            "OBS_RWPT_GE_60_V5_V6"
         ],
         "required_semantics": "majority",
         "required_min_fraction": 0.6,
@@ -131,10 +130,10 @@
         "diagnosis_id": "LEFT_BUNDLE_BRANCH_BLOCK_INCOMPLETE",
         "diagnosis_name": "Incomplete Left Bundle Branch Block",
         "required_observations": [
-            "OBS_QRS_DURATION_BETWEEN_100_AND_120_MS"
+            "OBS_QRS_DURATION_WIDE"
         ],
         "optional_observations": [
-            "OBS_R_WAVE_PEAK_TIME_GE_60_MS_V5_V6",
+            "OBS_RWPT_GE_60_V5_V6",
             "OBS_ABSENT_SEPTAL_Q_WAVE_V5_V6_I_AVL"
         ],
         "required_semantics": "majority",
@@ -152,9 +151,10 @@
             "OBS_R_WAVE_HIGH_V5_V6",
             "OBS_R_WAVE_HIGH_I",
             "OBS_S_WAVE_DEEP_aVR_LVH",
-            "OBS_RWPT_PROLONGED_LEFT_SIDE_LVH",
+            "OBS_RWPT_PROLONGED_V5_V6",
             "OBS_P_MITRALE",
-            "OBS_QRS_DURATION_PROLONGED_90"],
+            "OBS_QRS_DURATION_WIDE"
+        ],
         "optional_observations": [],
         "required_semantics": "majority",
         "required_min_fraction": 0.6,
@@ -184,9 +184,10 @@
         "required_observations": [
             "OBS_PATHOLOGICAL_Q_WAVE_V2_V3",
             "OBS_PATHOLOGICAL_Q_WAVE_OTHER_LEADS"
-
         ],
-        "optional_observations": [],
+        "optional_observations": [
+            "OBS_PATHOLOGICAL_Q_WAVE_DEPTH"
+        ],
         "required_semantics": "majority",
         "required_min_fraction": 0.6,
         "required_lead_count": 2,
@@ -197,21 +198,20 @@
         "limitations": ""
     },
     {
-    "diagnosis_id": "MYOCARDIAL_ISCHEMIA",
-    "diagnosis_name": "Myocardial Ischemia",
-    "required_observations": [
-        "OBS_ST_SEGMENT_DEPRESSION",
-        "OBS_T_WAVE_INVERSION"
-    ],
-    "optional_observations": [],
-    "required_semantics": "majority",
-    "required_min_fraction": 0.6,
-    "category": "Ischemic Heart Disease",
-    "suppresses": [],
-    "source": "https://ecgwaves.com/topic/myocardial-ischemia-infarction-reaction-ecg-changes-symptoms/",
-    "limitations": "ECGWAVES states that isolated T-wave inversions never indicate acute ischemia. T-wave changes without ST-segment deviation indicate post-ischemic changes rather than ongoing ischemia. Advanced patterns such as Wellens, de Winter's sign, hyperacute T-waves, symmetry, and pseudonormalization cannot be represented with the available feature set."
+        "diagnosis_id": "MYOCARDIAL_ISCHEMIA",
+        "diagnosis_name": "Myocardial Ischemia",
+        "required_observations": [
+            "OBS_ST_SEGMENT_DEPRESSION",
+            "OBS_T_WAVE_INVERSION"
+        ],
+        "optional_observations": [],
+        "required_semantics": "majority",
+        "required_min_fraction": 0.6,
+        "category": "Ischemic Heart Disease",
+        "suppresses": [],
+        "source": "https://ecgwaves.com/topic/myocardial-ischemia-infarction-reaction-ecg-changes-symptoms/",
+        "limitations": "ECGWAVES states that isolated T-wave inversions never indicate acute ischemia. T-wave changes without ST-segment deviation indicate post-ischemic changes rather than ongoing ischemia. Advanced patterns such as Wellens, de Winter's sign, hyperacute T-waves, symmetry, and pseudonormalization cannot be represented with the available feature set."
     },
-
     {
         "diagnosis_id": "RIGHT_BUNDLE_BRANCH_BLOCK",
         "diagnosis_name": "Right Bundle Branch Block",
@@ -220,12 +220,13 @@
             "OBS_R_PRIME_PRESENT_V1_V2",
             "OBS_R_PRIME_GT_R_V1_V2",
             "OBS_S_WAVE_BROAD_LATERAL_LEADS",
-            "OBS_S_WAVE_DURATION_Gt_40_V6_I",
+            "OBS_S_WAVE_DURATION_GT_40_V6_I",
             "OBS_ST_DEPRESSION_V1_V2",
             "OBS_T_WAVE_INVERSION_V1_V2",
             "OBS_T_WAVE_POSITIVE_LATERAL_LEADS"
         ],
         "optional_observations": [
+            "OBS_RWPT_GT_50_V1"
         ],
         "required_semantics": "majority",
         "required_min_fraction": 0.6,
@@ -245,9 +246,7 @@
             "OBS_ST_DECLINATION_QRS_POSITIVE_V1_TO_V3",
             "OBS_ST_UPSLOPE_QRS_NEGATIVE_V1_TO_V3",
             "OBS_P_PULMONALE",
-            "OBS_R_WAVE_HIGH_V1_V2",
-            "OBS_QRS_DURATION_BELOW_120_MS"
-            
+            "OBS_R_WAVE_HIGH_V1_V2"
         ],
         "required_semantics": "majority",
         "required_min_fraction": 0.8,
@@ -261,7 +260,7 @@
         "diagnosis_name": "Ventricular Rhythm",
         "required_observations": [
             "OBS_QRS_DURATION_WIDE",
-            "OBS_HEART_RATE_20_TO_40_BPM"
+            "OBS_HEART_RATE_BELOW_50_BPM"
         ],
         "optional_observations": [],
         "required_semantics": "majority",
@@ -270,6 +269,19 @@
         "suppresses": [],
         "source": "https://ecgwaves.com/topic/ventricular-rhythm-and-accelerated-ventricular-rhythm-idioventricular-rhythm/",
         "limitations": "The criteria '3 or more consecutive ventricular beats', 'regular rhythm', and 'discordant ST-T segments' are explicitly stated in the source but cannot be mapped to the allowed observation features. ST-T discordance directionality is qualitative and not representable using the permitted features."
+    },
+    {
+        "diagnosis_id": "NORM",
+        "diagnosis_name": "NORM",
+        "logic": "exclusion",
+        "required_diagnoses": [
+            "SINUS_RHYTHM"
+        ],
+        "required_observations": [],
+        "optional_observations": [],
+        "category": "Normal",
+        "suppresses": [],
+        "source": "PTB-XL NORM: ECG del tutto normale (ritmo sinusale + nessuna patologia).",
+        "limitations": "Diagnosi di esclusione: scatta solo se e' presente SINUS_RHYTHM e NESSUN'altra diagnosi e' stata rilevata. diagnosis_name='NORM' cosi' l'output allineato per RL produce l'id 'NORM' (mappabile 1:1 con PTB-XL). SINUS_RHYTHM resta separata e mappabile a PTB-XL 'SR'."
     }
-
 ]

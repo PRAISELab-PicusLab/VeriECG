@@ -1,20 +1,21 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 import json
+from pathlib import Path
 from rule_engine import (
     evaluate_observations_per_beat,
     evaluate_observations_global,
     apply_diagnosis_reasoning
 )
 
-RAW_ECG_PATH = "ecg_features_subset_prova.json"
-OBS_DEF_PATH = "Clinical_Observation_Dictionary.json"
-DIAG_DEF_PATH = "Diagnosis_Dictionary.json"
 
-OUT_OBS = "output_observations_by_lead_subset_prova_finale.json"
-OUT_DIAG = "output_diagnoses_subset_prova_finale.json"
-OUT_ALIGNED = "rule_output_aligned.json"
+BASE = Path(__file__).resolve().parent
+
+RAW_ECG_PATH = BASE / "features_di_ptbxl_subset.json"
+OBS_DEF_PATH = BASE / "Clinical_Observation_Dictionary.json"
+DIAG_DEF_PATH = BASE / "Diagnosis_Dictionary.json"
+
+OUT_OBS = BASE / "output_observations.json"
+OUT_DIAG = BASE / "output_diagnoses.json"
+OUT_ALIGNED = BASE / "output_rule_engine.json"
 
 
 # ==========================================================
@@ -67,32 +68,31 @@ def write_observations(data, path):
 
 def attach_required_satisfied_to_each_diagnosis(diagnoses, beat_obs, global_obs, diag_defs):
 
+    # osservazioni effettivamente soddisfatte nell'ECG
     satisfied = set(beat_obs.keys()) | set(global_obs.keys())
     enriched = []
 
     for diag in diagnoses:
 
+        diag_name = diag["diagnosis"].strip().lower()
 
-        diag_name = diag["diagnosis"]
-
-        #  se non è stringa, converti
-      #  if not isinstance(diag_name, str):
-           # diag_name = str(diag_name)
-
+        # trova la definizione della diagnosi
         diag_def = next(
             d for d in diag_defs
-            if d["diagnosis_name"].lower().strip() == diag_name.lower().strip()
+            if d["diagnosis_name"].strip().lower() == diag_name
         )
 
         required = diag_def.get("required_observations", [])
         optional = diag_def.get("optional_observations", [])
 
+        # FILTRATE per diagnosi
         required_satisfied = [obs for obs in required if obs in satisfied]
         optional_satisfied = [obs for obs in optional if obs in satisfied]
 
         enriched.append({
             **diag,
-            "diagnosis": diag_name,
+            "diagnosis": diag_def["diagnosis_name"],
+            "diagnosis_id": diag_def["diagnosis_id"],
             "obs_satisfied": sorted(required_satisfied + optional_satisfied)
         })
 
@@ -103,27 +103,24 @@ def attach_required_satisfied_to_each_diagnosis(diagnoses, beat_obs, global_obs,
 # OUTPUT ALLINEATO PER RL
 # ==========================================================
 
-def normalize_diag(d):
-    return d.upper().replace(" ", "_")
-
-
 def export_aligned_rule_output(all_diag, output_path="rule_output_aligned.json"):
     final_output = []
 
     for ecg_id, data in all_diag.items():
 
-        diag_block = data["diagnoses"][0]
+        for diag_block in data["diagnoses"]:
 
-        observations = diag_block["obs_satisfied"]
+            # Usa il diagnosis_id CANONICO (non piu' normalize_diag(nome)): e' la
+            # stessa convenzione di DIAG_LIST.json che vede Qwen, cosi' la reward
+            # confronta gli stessi identificatori. NB: mapping/genera_liste_da_rule_engine.py
+            # produce DIAG_LIST.json con questi diagnosis_id.
+            diagnosis_id = diag_block["diagnosis_id"]
 
-        diagnosis_name = diag_block["diagnosis"]
-        diagnosis_id = normalize_diag(diagnosis_name)
-
-        final_output.append({
-            "id": ecg_id,
-            "observations": observations,
-            "diagnoses": [diagnosis_id]
-        })
+            final_output.append({
+                "id": ecg_id,
+                "observations": diag_block["obs_satisfied"],
+                "diagnoses": [diagnosis_id]
+            })
 
     with open(output_path, "w") as f:
         json.dump(final_output, f, indent=2)
