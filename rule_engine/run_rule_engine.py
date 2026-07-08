@@ -111,7 +111,7 @@ def export_aligned_rule_output(all_diag, output_path="rule_output_aligned.json")
         for diag_block in data["diagnoses"]:
 
             # Usa il diagnosis_id CANONICO (non piu' normalize_diag(nome)): e' la
-            # stessa convenzione di DIAG_LIST.json che vede Qwen, cosi' la reward
+            # stessa convenzione di DIAG_LIST.json che vede il mapper, cosi' la reward
             # confronta gli stessi identificatori. NB: mapping/genera_liste_da_rule_engine.py
             # produce DIAG_LIST.json con questi diagnosis_id.
             diagnosis_id = diag_block["diagnosis_id"]

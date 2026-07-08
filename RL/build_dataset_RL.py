@@ -3,7 +3,7 @@
 # ============================================================
 # Cosa fa: per ogni ECG accoppia il PROMPT di generazione con la GROUND TRUTH
 # del rule engine (osservazioni + diagnosi). E' il file che alimenta il PPO:
-# durante il training GEM genera un report, Qwen ne estrae i claim, e la reward
+# durante il training GEM genera un report, l'LLM mapper ne estrae i claim, e la reward
 # li confronta con rule_observations/rule_diagnoses di questo file.
 #
 # INPUT:

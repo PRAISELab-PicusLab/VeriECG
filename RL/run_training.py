@@ -8,7 +8,7 @@ from pathlib import Path
 
 # training_rl.py definisce train_rl_multimodal e, importandolo, tira dentro
 # reward_definition.py (le due reward + reward_fn_training) e mapping.py
-# (estrazione claim con Qwen -> CARICA il modello Qwen)
+# (estrazione claim con l'LLM mapper -> CARICA il modello mapper)
 
 from training_rl import train_rl_multimodal
 

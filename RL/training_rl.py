@@ -58,7 +58,7 @@ _LlavaLlamaForCausalLM.forward = _forward_no_cache_position
 # ============================================================
 # IMPORT CROSS-FILE 
 #   - reward_definition.py: le due reward + il selettore reward_fn_training
-#   - mapping.py: estrazione claim con Qwen + i vocabolari OBS/DIAG
+#   - mapping.py: estrazione claim con il mapper LLM + i vocabolari OBS/DIAG
 # ============================================================
 from reward_definition import (
     compute_reward_jha25,
@@ -70,6 +70,7 @@ from mapping import (
     extract_claims_from_report_local,
     OBS_LIST_STR,
     DIAG_LIST_STR,
+    MAPPING_MODEL,   # nome del modello mapper, per il recap dinamico (non piu' hardcoded)
 )
 
 # Controllo esplicito: queste definizioni devono ora essere presenti
@@ -298,7 +299,7 @@ def compute_gae(rewards, values, gamma=1.0, lam=0.95):
 def evaluate_policy(model, tokenizer, loader, label="eval"):
     model.eval()
     precisions, recalls, f1s, rewards = [], [], [], []
-    diagnostics = []   # per-campione: referto GEM + claim Qwen + claim rule engine + metriche
+    diagnostics = []   # per-campione: referto GEM + claim mapper + claim rule engine + metriche
 
     import time as _time
     _nb = len(loader)
@@ -313,7 +314,7 @@ def evaluate_policy(model, tokenizer, loader, label="eval"):
         )
         print(f"[{label}] campione {_bi+1}: GEM ok in {_time.time()-_t0:.1f}s "
               f"(report: {len(reports[0]) if reports else 0} caratteri). "
-              f"Estraggo claim con Qwen...", flush=True)
+              f"Estraggo claim con il mapper...", flush=True)
         for rep, oss_RE, diag_RE, _exid in zip(reports, batch["rule_obs"], batch["rule_diag"], batch["ids"]):
             oss_GEM, diag_GEM = extract_claims_from_report_local(rep, OBS_LIST_STR, DIAG_LIST_STR)
             p, r, f1 = compute_claim_metrics(oss_RE, diag_RE, oss_GEM, diag_GEM)
@@ -328,11 +329,11 @@ def evaluate_policy(model, tokenizer, loader, label="eval"):
                 "oss_RE": oss_RE, "diag_RE": diag_RE,
                 "precision": p, "recall": r, "f1": f1, "reward": reward,
             })
-            # DIAGNOSTICA LIVE: confronto claim estratti (GEM->Qwen) vs rule engine
+            # DIAGNOSTICA LIVE: confronto claim estratti (GEM->mapper) vs rule engine
             print(f"  [diag] id={_exid}  f1={f1:.3f}  reward={reward:.2f}", flush=True)
-            print(f"    OBS  GEM/Qwen = {oss_GEM}", flush=True)
+            print(f"    OBS  GEM/mapper = {oss_GEM}", flush=True)
             print(f"    OBS  RULE-ENG = {oss_RE}", flush=True)
-            print(f"    DIAG GEM/Qwen = {diag_GEM}  |  DIAG RULE-ENG = {diag_RE}", flush=True)
+            print(f"    DIAG GEM/mapper = {diag_GEM}  |  DIAG RULE-ENG = {diag_RE}", flush=True)
         print(f"[{label}] campione {_bi+1}/{_nb} completato in "
               f"{_time.time()-_t0:.1f}s (f1={f1:.3f}, reward={reward:.2f})", flush=True)
 
@@ -433,7 +434,7 @@ def train_rl_multimodal(
         model_name="llava_llama",
         device_map="auto",
         load_4bit=True,   # FIX MEMORIA: GEM 7B fp16 (~14GB) non entra in T4 16GB
-        load_8bit=False,  # insieme a Qwen -> offloading su CPU e lentezza estrema.
+        load_8bit=False,  # insieme al mapper -> offloading su CPU e lentezza estrema.
     )                     # In 4-bit GEM ~4-5GB: tutto in GPU, niente offload.
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token = tokenizer.eos_token
@@ -538,8 +539,8 @@ def train_rl_multimodal(
     # =========================================================
     # 2c. DIAGNOSTICA MEMORIA/DEVICE (stampa SUBITO, prima della eval lenta)
     # Se tra i device compare 'cpu' o 'meta', device_map='auto' ha fatto
-    # OFFLOADING per mancanza di VRAM (probabile: GEM 7B fp16 ~14GB + Qwen 3B
-    # ~6GB sulla stessa T4 da 16GB) -> generazione lentissima. In quel caso
+    # OFFLOADING per mancanza di VRAM (probabile: GEM 7B fp16 ~14GB + il mapper
+    # sulla stessa GPU) -> generazione lentissima. In quel caso
     # la soluzione e' caricare GEM in 4-bit.
     from collections import Counter as _Counter
     _devs = _Counter(str(p.device) for p in model.parameters())
@@ -906,7 +907,7 @@ def train_rl_multimodal(
     _save_json("training_log.json", training_log)
     _save_json("metriche_riassunto.json", {"baseline": baseline_metrics, "post_rl": post_metrics})
 
-    # log leggibile: referto GEM + claim Qwen + claim rule engine + reward, per campione
+    # log leggibile: referto GEM + claim mapper + claim rule engine + reward, per campione
     def _write_readable(name, diag_list, titolo):
         lines = [f"===== {titolo} =====\n"]
         for d in diag_list:
@@ -918,7 +919,7 @@ def train_rl_multimodal(
             head += f" | reward: {d['reward']:.2f} ---\n"
             lines.append(head)
             lines.append("[REFERTO GEM]\n" + str(d["report"]).strip() + "\n")
-            lines.append("[CLAIM GEM->QWEN]   obs=" + str(d["oss_GEM"]) + "  diag=" + str(d["diag_GEM"]) + "\n")
+            lines.append("[CLAIM GEM->MAPPER]  obs=" + str(d["oss_GEM"]) + "  diag=" + str(d["diag_GEM"]) + "\n")
             lines.append("[CLAIM RULE ENGINE] obs=" + str(d["oss_RE"]) + "  diag=" + str(d["diag_RE"]) + "\n")
         with open(run_dir / name, "w") as _f:
             _f.writelines(lines)
@@ -974,9 +975,10 @@ Metriche precision/recall/f1: claim-level stile Jha25 / DocLens (claim = set(obs
   advantages normalizzati; values .detach() prima del GAE.
 - Fusione multimodale via tokenizer_image_token (IMAGE_TOKEN_INDEX); posizioni di risposta
   ricavate dai labels espansi (!= IGNORE_INDEX), non da conteggi pre-fusione.
-- Mapping claim: Qwen2.5-3B-Instruct (chat template, greedy, decodifica solo token nuovi);
+- Mapping claim: {MAPPING_MODEL} (chat template, greedy, decodifica solo token nuovi;
+  prompt v2 con regola di negazione + reperti normali + few-shot + reasoning);
   vocabolario dai file slim mapping/OBS_LIST.json (id osservazioni) e mapping/DIAG_LIST.json (diagnosis_id),
-  con filtro _extract_ids sul vocabolario reale.
+  con filtro _extract_ids sul vocabolario reale + rete di sicurezza negation_filter.
 
 --- PARAMETRI ADDESTRABILI ---
 trainable={_trainable:,}  |  totali={_total:,}  |  {100 * _trainable / _total:.3f}%
@@ -1028,7 +1030,7 @@ n. step di training: {len(training_log)}
         _plt.close(_fig2)
 
     print(f"\nOutput della run salvato in: {run_dir}")
-    print("  - referti_e_claim_*.txt : referto GEM + claim Qwen + claim rule engine + reward")
+    print("  - referti_e_claim_*.txt : referto GEM + claim mapper + claim rule engine + reward")
     print("  - diagnostica_*.json, training_log.json, metriche_riassunto.json")
     print("  - confronto_baseline_vs_postRL.png, curve_training.png")
 
