@@ -1,14 +1,11 @@
-# 🫀 VeriECG
-
+# VeriECG: Symbolic-Verified ECG Reporting via Reinforcement Learning
+<div align="center">
+    <p><i>Grounding vision-language ECG report generation in deterministic, rule-based clinical evidence</i></p>
+    <p><strong>Mariano Barone</strong> · <strong>Luisa Ciniglio</strong> · <strong>Francesco Di Serio</strong> · <strong>Vincenzo Moscato</strong> · <strong>Roberto Moio</strong> · <strong>Marco Postiglione</strong> · <strong>Giuseppe Riccio</strong> · <strong>Antonio Romano</strong></p>
 <div align="center">
     <a href="LICENSE" target="_blank"><img alt="License"
         src="https://img.shields.io/badge/license-cc_by_nc_4.0-gray?style=for-the-badge&logo=creativecommons&logoColor=white&logoSize=auto&color=green"/></a>
 </div>
-
-<div align="center">
-    <h3>VeriECG: Symbolic-Verified ECG Reporting via Reinforcement Learning</h3>
-    <p><i>Grounding vision-language ECG report generation in deterministic, rule-based clinical evidence</i></p>
-    <p><strong>Mariano Barone</strong> · <strong>Luisa Ciniglio</strong> · <strong>Francesco Di Serio</strong> · <strong>Vincenzo Moscato</strong> · <strong>Roberto Moio</strong> · <strong>Marco Postiglione</strong> · <strong>Giuseppe Riccio</strong> · <strong>Antonio Romano</strong></p>
 </div>
 
 <hr>
